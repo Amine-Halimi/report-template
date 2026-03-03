@@ -7,7 +7,20 @@
 %% only used to ease conversion to html.
 \ifthenelse{\boolean{latexmlc}}{}{
   \usepackage{babel,csquotes,xpatch}% recommended
-  \usepackage[backend=biber,citestyle=alphabetic,bibstyle=authortitle]{biblatex}
+  \usepackage[backend=biber,citestyle=numeric, language=french]{biblatex}
+
+  %% Chargement des fichiers .bib (CORRIGÉ)
+  \addbibresource{ietf.bib}
+  \addbibresource{bib.bib}
+
+  % \DeclareLabelname{%
+  %   \field{shortauthor}
+  %   \field{author}
+  %   \field{shorteditor}
+  %   \field{editor}
+  %   \field{translator}
+  %   \field{organization}
+  % }
 }
 
 
@@ -51,6 +64,8 @@
 \usepackage{lipsum}
 \usepackage[normalem]{ulem}
 
+\graphicspath{{images/}}
+
 % for basic article
 \usepackage[toc]{appendix}
 
@@ -60,7 +75,7 @@
 %\usepackage{amsmath,adjustbox,fancyvrb,caption}
 \usepackage{adjustbox,fancyvrb}
 
-\usepackage[ breaklinks, colorlinks=true]{hyperref}
+\usepackage[breaklinks, colorlinks=true]{hyperref}
   %setup new colors
   \hypersetup{
     linkcolor=BrickRed,
@@ -74,22 +89,11 @@
     filebordercolor=Mulberry,
     urlbordercolor=NavyBlue,
     menubordercolor=BrickRed,
-    runbordercolor=Mulberry}
+    runbordercolor=Mulberry
+  }
     %to hilight text
 \usepackage[framemethod=tikz]{mdframed}
-%% defintion of the bib files
-%% when generated with biber
-\ifthenelse{\boolean{latexmlc}}{}{
-\bibliography{ietf,bib}
-\DeclareLabelname{%
-\field{shortauthor}
-\field{author}
-\field{shorteditor}
-\field{editor}
-\field{translator}
-\field{organization}
-}
-}
+
 % title and authors
 \input{preambule.tex}
 
@@ -100,6 +104,7 @@
 
 % main document content
 \input{paper}
+
 \ifthenelse{\boolean{latexmlc}}{
   \bibliographystyle{IEEEtranS}
   \bibliography{ietf,bib}
@@ -113,6 +118,3 @@
 \input{appendix}
 
 \end{document}
-
-
-
