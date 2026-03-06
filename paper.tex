@@ -2,68 +2,63 @@
 
 \section{Problématique à résoudre}
 \subsection{Le crypto-jacking comme menace informatique moderne}
-La mine de crypto-monnaie, ou cryptomining en anglais, est la génération des pièces de crypto-monnaie et la validation des transactions faites dans un réseau blockchain pour mettre à jour le registre. Ceux qui font le minage de crypto-monnaie sont payés avec de la crypto-monnaie et comme ces monnaies digitales valent énormément d’argent, cette pratique est forcément très rentable. \cite{freeman2026mining}
+La mine de crypto-monnaie, ou cryptomining en anglais, est la génération des pièces de crypto-monnaie et la validation des transactions faites dans un réseau blockchain pour mettre à jour le registre. Ceux qui font le minage de crypto-monnaie sont payés avec de la crypto-monnaie et comme ces monnaies digitales valent énormément d’argent, cette pratique est forcément très rentable \cite{freeman2026mining}. \\
 \newline
-Cependant, cette technologie a attiré l’attention d’acteurs malveillants. Les propriétaires de portefeuilles de crypto-monnaies restent anonymes et les transactions ne révèlent pas les identités des individus impliqués. Ainsi, cet anonymat permet aux cybercriminels de se faire de l’argent sans se faire prendre. C’est pour cette raison que les victimes du rançongiciel WannaCry devaient payer en bitcoin à un portefeuille digital.\cite{uptycs2026teamtnt} De plus, comme cette technologie est très rentable, il est évident que cela attire les cybercriminels ayant un but de gain d’argent. 
+Cependant, cette technologie a attiré l’attention d’acteurs malveillants. Les propriétaires de portefeuilles de crypto-monnaies restent anonymes et les transactions ne révèlent pas les identités des individus impliqués. Ainsi, cet anonymat permet aux cybercriminels de se faire de l’argent sans se faire prendre. C’est pour cette raison que les victimes du rançongiciel WannaCry devaient payer en bitcoin à un portefeuille digital \cite{uptycs2026teamtnt}. De plus, comme cette technologie est très rentable, il est évident que cela attire les cybercriminels ayant un but de gain d’argent. \\
 \newline
-Ainsi, il n’est pas étonnant que des acteurs malfaisants cherchent à exploiter les machines de leurs victimes pour la génération de crypto-monnaies. Cela peut être de la forme de minage de crypto-monnaies sur la machine de leurs victimes, ou bien voler les pièces de crypto-monnaies déjà présentes. Cette pratique s’appelle le crypto-jacking. En cas légitime, une personne qui pratique le minage de crypto-monnaie mettrait en place son propre environnement avec du matériel acheté légalement, soit une salle de cartes graphiques avec un serveur de contrôle avec le système de refroidissement nécessaire entre autres.
+Ainsi, il n’est pas étonnant que des acteurs malfaisants cherchent à exploiter les machines de leurs victimes pour la génération de crypto-monnaies. Cela peut être de la forme de minage de crypto-monnaies sur la machine de leurs victimes, ou bien voler les pièces de crypto-monnaies déjà présentes. Cette pratique s’appelle le crypto-jacking. En cas légitime, une personne qui pratique le minage de crypto-monnaie mettrait en place son propre environnement avec du matériel acheté légalement, soit une salle de cartes graphiques avec un serveur de contrôle avec le système de refroidissement nécessaire entre autres. 
 \subsection{Le cryptomining malveillant dans les environnements conteneurisés}
-Docker est la technologie de choix pour les développeurs. La conteneurisation permet à ces derniers de facilement déployer leurs applications dans un environnement qu'ils contrôlent et de les migrer avec aisance. De plus, les développeurs peuvent obtenir ou même publier leurs propres images de conteneur sur la plateforme Docker Hub, permettant ainsi la collaboration communautaire de tous les utilisateurs.
+Docker est la technologie de choix pour les développeurs. La conteneurisation permet à ces derniers de facilement déployer leurs applications dans un environnement qu'ils contrôlent et de les migrer avec aisance. De plus, les développeurs peuvent obtenir ou même publier leurs propres images de conteneur sur la plateforme Docker Hub, permettant ainsi la collaboration communautaire de tous les utilisateurs. \\
 \newline
-Cependant, les acteurs malfaisants ont aussi prêté attention à Docker Hub. Ces acteurs ont remarqué que la plateforme mettait beaucoup de confiance envers ses  utilisateurs, laissant n’importe qui se créer un compte publier des images. De plus, Docker Hub ne vérifie pas individuellement la nature de l’image avant de la publier, ce qui explique la prolifération des images malveillantes. C’est ainsi qu’il y a eu des attaques de chaînes d’approvisionnement sous la forme de typosquatting, une pratique visant à ressembler le nom d’une image légitime pour tromper un utilisateur de télécharger une image malveillante.
+Cependant, les acteurs malfaisants ont aussi prêté attention à Docker Hub. Ces acteurs ont remarqué que la plateforme mettait beaucoup de confiance envers ses  utilisateurs, laissant n’importe qui se créer un compte publier des images. De plus, Docker Hub ne vérifie pas individuellement la nature de l’image avant de la publier, ce qui explique la prolifération des images malveillantes. C’est ainsi qu’il y a eu des attaques de chaînes d’approvisionnement sous la forme de typosquatting, une pratique visant à ressembler le nom d’une image légitime pour tromper un utilisateur de télécharger une image malveillante. \\
 \newline
-En plus de cela, les images de conteneurs ont certainement des vulnérabilités logicielles dont des acteurs malveillants peuvent tirer avantage. Des étudiantes de l’université des sciences et technologies norvégiennes ont révélé en 2020 que la quantité de vulnérabilités introduites sur Docker Hub a augmenté avec les images de type certifiée ayant le plus de vulnérabilités. \cite{wist2020docker} Cette étude corrobore avec une autre étude indiquant que les images de base, c’est-à-dire des images seulement avec le système d’exploitation et le minimum de librairies utilisées pour construire des images plus concrètes, était une source principale des vulnérabilités. Ces vulnérabilités persistent alors dans les images dérivées, ce qui augmente le nombre de conteneurs vulnérables à des acteurs malveillants. \cite{haque2021baseimage}
+En plus de cela, les images de conteneurs ont certainement des vulnérabilités logicielles dont des acteurs malveillants peuvent tirer avantage. Des étudiantes de l’université des sciences et technologies norvégiennes ont révélé en 2020 que la quantité de vulnérabilités introduites sur Docker Hub a augmenté avec les images de type certifiée ayant le plus de vulnérabilités \cite{wist2020docker}. Cette étude corrobore avec une autre étude indiquant que les images de base, c’est-à-dire des images seulement avec le système d’exploitation et le minimum de librairies utilisées pour construire des images plus concrètes, était une source principale des vulnérabilités. Ces vulnérabilités persistent alors dans les images dérivées, ce qui augmente le nombre de conteneurs vulnérables à des acteurs malveillants \cite{haque2021baseimage}. 
 \subsection{Réalité du phénomène}
-Ce problème n’est pas un phénomène niche. En effet, l’organisation Sysdig a trouvé 1650 images de conteneurs ayant du malware sur la plate-forme Docker-Hub. Parmi les comportements malicieux, le crypto-jacking est le plus populaire, soit 608 images suivies par le type 281 ayant des secrets cachés.\cite{sysdig2026maliciousimages} \cite{bleeping2026maliciouscontainers} Le but est que des utilisateurs ou des compagnies téléchargent des images malicieuses, alors que ces derniers voulaient déployer facilement leurs applications. Ainsi, lorsque les utilisateurs déploient un conteneur, celui-ci se mettra à utiliser les ressources de la machine hôte pour miner ou voler de la crypto-monnaie.
+Ce problème n’est pas un phénomène niche. En effet, l’organisation Sysdig a trouvé 1650 images de conteneurs ayant du malware sur la plate-forme Docker-Hub. Parmi les comportements malicieux, le crypto-jacking est le plus populaire, soit 608 images suivies par le type 281 ayant des secrets cachés \cite{sysdig2026maliciousimages} \cite{bleeping2026maliciouscontainers}. Le but est que des utilisateurs ou des compagnies téléchargent des images malicieuses, alors que ces derniers voulaient déployer facilement leurs applications. Ainsi, lorsque les utilisateurs déploient un conteneur, celui-ci se mettra à utiliser les ressources de la machine hôte pour miner ou voler de la crypto-monnaie. \\
 \newline
-Pour continuer, le site BleepingComputer a rapporté en 2021 que deux douzaines d’images malveillantes de crypto-jacking postées sur Docker Hub ont été téléchargées plus de 20 millions de fois.\cite{bleeping2026cryptominers} Ces images malveillantes auraient pu avoir généré 200,000 USD de revenu pour leurs fournisseurs. Ainsi, cela est donc un moyen efficace de générer des profits sans investir dans leur propre environnement.
+Pour continuer, le site BleepingComputer a rapporté en 2021 que deux douzaines d’images malveillantes de crypto-jacking postées sur Docker Hub ont été téléchargées plus de 20 millions de fois\cite{bleeping2026cryptominers}. Ces images malveillantes auraient pu avoir généré 200,000 USD de revenu pour leurs fournisseurs. Ainsi, cela est donc un moyen efficace de générer des profits sans investir dans leur propre environnement.
 \subsection{Conclusion}
-Les constats précédents mettent en évidence la réalité et la gravité du cryptomining malveillant au sein des images Docker provenant de registres publics. Malgré l’existence de solutions de sécurité largement adoptées dans les chaînes CI/CD, ces menaces continuent de se propager et d’échapper aux mécanismes de détection traditionnels.
-
-Afin de mieux comprendre les limites actuelles de la protection des images conteneurisées, il est nécessaire d’analyser les travaux existants et les outils de référence utilisés pour la sécurisation des images Docker. Cette analyse a pour objectif de situer notre problématique par rapport aux solutions existantes, d’examiner les mesures de sécurité proposées, ainsi que leurs limites dans la détection des comportements de cryptomining malveillant, et de justifier les décisions techniques qui seront prises pour ce projet.
-
+Les constats précédents mettent en évidence la réalité et la gravité du cryptomining malveillant au sein des images Docker provenant de registres publics. Malgré l’existence de solutions de sécurité largement adoptées dans les chaînes CI/CD, ces menaces continuent de se propager et d’échapper aux mécanismes de détection traditionnels. \\
+\newline
+Afin de mieux comprendre les limites actuelles de la protection des images conteneurisées, il est nécessaire d’analyser les travaux existants et les outils de référence utilisés pour la sécurisation des images Docker. Cette analyse a pour objectif de situer notre problématique par rapport aux solutions existantes, d’examiner les mesures de sécurité proposées, ainsi que leurs limites dans la détection des comportements de cryptomining malveillant, et de justifier les décisions techniques qui seront prises pour ce projet. \\
 \section{État de l'art}
 \subsection{Problématiques antérieures (et leurs solutions)}
-Voici quelques problèmes enregistrés par divers groupes en lien avec Docker et les images malveillantes.
+Voici quelques problèmes enregistrés par divers groupes en lien avec Docker et les images malveillantes. \\
 \subsubsection{FortiCNAPP}
-Une attaque produit depuis un conteneur à été fait par le groupe TeamTNT pour envoyer des programmes malveillants via des images infectées sur un conteneur.
+Une attaque produite depuis un conteneur a été faite par le groupe TeamTNT pour envoyer des programmes malveillants via des images infectées sur un conteneur. \\
 \newline
 \textbf{Méthode d’intrusion}
 \newline
-Pour introduire les images malicieuses, le groupe à obtenu accès à un compte docker légitime à cause d’authentification présent dans un github public appartenant à l’utilisateur ce qui à donner accès au compte \cite{mitreT1552002}. Le groupe à ensuite télécharger des images infectées pour lancer le téléchargement de programmes intrusifs chez les victimes \cite{mitreT1204003}. Les programmes malicieux présents dans l’image sont un IRC bot Tsunami, un outil de capture de bannières et un outil de diffusion de services \cite{mitreT1525}.
+Pour introduire les images malicieuses, le groupe à obtenu accès à un compte Docker légitime à cause d’authentification présente dans un github public appartenant à l’utilisateur ce qui à donner accès au compte \cite{mitreT1552002}. Le groupe à ensuite télécharger des images infectées pour lancer le téléchargement de programmes intrusifs chez les victimes \cite{mitreT1204003}. Les programmes malicieux présents dans l’image sont un IRC bot Tsunami, un outil de capture de bannières et un outil de diffusion de services \cite{mitreT1525}. \\
 \newline
 \textbf{Détection}
 \newline
-L’intrusion à été détectée par une équipe de recherche de FortiCNAPP qui avait déployé plusieurs conteneurs intentionnellement vulnérables pour déclencher des attaques et ainsi recevoir des informations \cite{mitreT1610}. En recevant les informations, ils ont trouvé que les images provenaient d’un conteneur de l’utilisateur légitime et on pu communiquer avec lui pour effacer les conteneurs.
+L’intrusion à été détectée par une équipe de recherche de FortiCNAPP qui avait déployé plusieurs conteneurs intentionnellement vulnérables pour déclencher des attaques et ainsi recevoir des informations \cite{mitreT1610}. En recevant les informations, ils ont trouvé que les images provenaient d’un conteneur de l’utilisateur légitime et on put communiquer avec lui pour effacer les conteneurs. \\
 \newline
-\textbf{Prévention conseillé}
+\textbf{Prévention conseillée}
 \newline
-Pour s’assurer de la sécurité d’une image et mitiger les risques, on peut regarder périodiquement l’intégrité des images pour vérifier qu’ils ne contiennent pas de programme malicieux \cite{mitreM1047}. Faire venir des images de groupe authentiques et fiables pour assurer la validité de l’image \cite{mitreM1045} ou modifier les permissions pour éviter que quiconque puisse changer une image \cite{mitreM1026}.
+Pour s’assurer de la sécurité d’une image et mitiger les risques, on peut regarder périodiquement l’intégrité des images pour vérifier qu’ils ne contiennent pas de programme malicieux \cite{mitreM1047}. Faire venir des images de groupe authentiques et fiables pour assurer la validité de l’image \cite{mitreM1045} ou modifier les permissions pour éviter que quiconque puisse changer une image \cite{mitreM1026}. \\
 \newline
-\subsubsection{PDF sur la sécurité des conteneurs selon OWASP \cite{kulkarni2020containers}:}
-Les conteneurs sont conçus en isolant les applications des autres, ils sont utilisés pour analyser des programmes malicieux, rouler des micro-services, déployer rapidement des tâches répétitives et pour du cloud. Cependant, les conteneurs sont à risque d’attaque autant sur le conteneur que sur les applications. Notamment, des menaces tel que l’exploitation de configuration mal sécurisée, une augmentation des privilèges sur le conteneurs, l’exploitation de vulnérabilités dans le système du conteneur ou sur l’hôte.
-Plusieurs couches composant un conteneur ont des méthodes de contrôles pour réguler les conteneurs et possède aussi des vulnérabilités, voici quelques exemples:
-La couche d’opération des systèmes possèdes quelques vulnérabilités:
+\subsubsection{Document sur la sécurité des conteneurs selon OWASP \cite{kulkarni2020containers}:}
+Les conteneurs sont conçus en isolant les applications des autres, ils sont utilisés pour analyser des programmes malicieux, rouler des micro-services, déployer rapidement des tâches répétitives et pour du cloud. Cependant, les conteneurs sont à risque d’attaque autant sur le conteneur que sur les applications. Notamment, des menaces telles que l’exploitation de configuration mal sécurisée, une augmentation des privilèges sur le conteneur, l’exploitation de vulnérabilités dans le système du conteneur ou sur l’hôte. \\
+\newline
+Plusieurs couches composant un conteneur ont des méthodes de contrôles pour réguler les conteneurs et possède aussi des vulnérabilités, voici quelques exemples: \\
+\newline
+La couche d’opération des systèmes possède quelques vulnérabilités:
 \begin{itemize}
-    \item à risque si des applications non sollicités sont présentes
-    \item les applications ont des erreurs de code
-    \item un accès est mal appelé ce qui ouvre une fenêtre d’opportunité pour un attaquant
-\end{itemize}
-La couche d’opération des systèmes possèdes quelques vulnérabilités:
-\begin{itemize}
-    \item à risque si des applications non sollicités sont présentes
+    \item à risque si des applications non sollicitées sont présentes
     \item les applications ont des erreurs de code
     \item un accès est mal appelé ce qui ouvre une fenêtre d’opportunité pour un attaquant
 \end{itemize}
 Aussi, contrôler les dépôts est important pour éviter l’exploitation du dépôt:
 \begin{itemize}
     \item Avoir des images immuables
-    \item Renforcé l’isolation/segmentation des services
-    \item Supervisé le conteneur pour détecter les actions suspectes
+    \item Renforcer l’isolation/segmentation des services
+    \item Superviser le conteneur pour détecter les actions suspectes
     \item Mettre en quarantaine si compromis
-    \item etc
+    \item etc.
 \end{itemize}
-Il est conseillé pour sécuriser l'environnement du conteneur de sécuriser aussi
+Il est conseillé pour sécuriser l'environnement du conteneur de sécuriser aussi:
 \begin{itemize}
     \item Le système d’opération
     \item L'environnement d’exécution de conteneur
@@ -72,7 +67,7 @@ Il est conseillé pour sécuriser l'environnement du conteneur de sécuriser aus
     \item Les applications présentes dans le conteneur
 \end{itemize}
 \subsubsection{Cas de Uptycs \cite{cso2026wannacry}:}
-Le groupe TeamTNT à déployé un conteneur à image malicieuse pour infecter des ordinateurs et les utiliser pour faire du cryptomining.
+Le groupe TeamTNT à déployé un conteneur à image malicieuse pour infecter des ordinateurs et les utiliser pour faire du cryptomining. \\
 \newline
 \textbf{Méthode d’attaque}
 \newline
@@ -93,54 +88,54 @@ Plan de l’attaque:
 \textbf{Détection}
 \newline 
 Aucune méthode de détection n’est mentionnée dans cet article.
-Bien que les conseils offerts par le site soient utilisés pour vendre leurs produits, on peut sécuriser les conteneurs en installant des outils CI/CD pour scanner des images avant qu’ils ne soient déployés dans la production. On peut aussi surveiller et analyser en lien avec la CIS référence pour détecter des problèmes de configuration.
-\newline
+Bien que les conseils offerts par le site soient utilisés pour vendre leurs produits, on peut sécuriser les conteneurs en installant des outils CI/CD pour scanner des images avant qu’ils ne soient déployés dans la production. On peut aussi surveiller et analyser en lien avec la CIS référence pour détecter des problèmes de configuration. \\
+
 \subsubsection{Cas jfrog \cite{wist2020docker}:}
-Un autre exemple d’utilisation d’image sur docker pour l’envoi de malware et de phishing-scams vient du site jfrog.
+Un autre exemple d’utilisation d’image sur Docker pour l’envoi de malware et de phishing-scams vient du site jfrog. \\
 \newline
 \textbf{Méthode d’attaque}
 \newline
-Docker fournit des dépôts pouvant contenir des images qui sont promus par une section HTML et une courte description. Cependant, la documentation est utilisée pour lancer des malwares sur les personnes souhaitant obtenir des images. Environ 4.6 millions de dépôts ne contiennent pas de d’image, uniquement une description et un intro pour attirer des utilisateurs dans le piège.
+Docker fournit des dépôts pouvant contenir des images qui sont promus par une section HTML et une courte description. Cependant, la documentation est utilisée pour lancer des malwares sur les personnes souhaitant obtenir des images. Environ 4.6 millions de dépôts ne contiennent pas d’image, uniquement une description et une introduction pour attirer des utilisateurs dans le piège. \\
 \newline
 \textbf{Liens infectés}
 \newline
-Pour lancer les malwares, des liens sont utilisés pour rediriger les utilisateurs vers un serveur notamment en cachant la redirection dans le nom de fichier encodé. En 2023, une nouvelle sorte de redirection est utilisée en redirigeant l’utilisateur vers un nouveau domaine sans qu’il soit averti grâce à un paramètre (usg) qui empêche l’apparition d’un avertissement de changement de domaine.
+Pour lancer les malwares, des liens sont utilisés pour rediriger les utilisateurs vers un serveur notamment en cachant la redirection dans le nom de fichier encodé. En 2023, une nouvelle sorte de redirection est utilisée en redirigeant l’utilisateur vers un nouveau domaine sans qu’il soit averti grâce à un paramètre (usg) qui empêche l’apparition d’un avertissement de changement de domaine. \\
 \newline
 \textbf{Fonctionnement du malware}
 \newline
-Le malware communique avec le serveur C2C via des requêtes HTTP POST sous forme JSON encodé en HEX. La clé est différente cependant et demande un malware du serveur qui envoie une requête d’initialisation pour obtenir des informations sur le système.
+Le malware communique avec le serveur C2C via des requêtes HTTP POST sous forme JSON encodé en HEX. La clé est différente cependant et demande un malware du serveur qui envoie une requête d’initialisation pour obtenir des informations sur le système. \\
+\clearpage
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.5\textwidth]{jfrog_campaign.png}
     \caption{Fonctionnement dun malware de jfrog}
 \end{figure}
-\newline
 \textbf{EBook Phishing}
 \newline
-Beaucoup de dépôt (1 million en 2021) propose la vente de eBook gratuit. Une fois le livre ouvert, un site d’abonnement est envoyé pour que l’utilisateur rentre les informations de sa carte de crédit dans le but de voler les informations.
+Beaucoup de dépôt (1 million en 2021) propose la vente de eBook gratuit. Une fois le livre ouvert, un site d’abonnement est envoyé pour que l’utilisateur rentre les informations de sa carte de crédit dans le but de voler les informations. \\
 \newline
 \textbf{Recommandation}
 \newline
-Comme indiqué plus haut, un dépôt sans image est un indicateur sérieux de la possibilité d’un malware. Suivre des ressources fiables comme les images officielles de Docker ou les tags valides évitent des problèmes. Ne pas faire confiance à ceux qui vendent un produit supposément gratuit mais demande votre carte de crédit est une autre précaution importante.
+Comme indiqué plus haut, un dépôt sans image est un indicateur sérieux de la possibilité d’un malware. Suivre des ressources fiables comme les images officielles de Docker ou les tags valides évitent des problèmes. Ne pas faire confiance à ceux qui vendent un produit supposément gratuit, mais demandent votre carte de crédit est une autre précaution importante. \\
 \newline
 \subsection{Analyse des outils existants}
-En résumé, les conteneurs Docker sont alors des cibles d’attaques par des acteurs malveillants. Que ce soit par le cryptojacking, l’attaque de chaîne d’approvisionnement ou le piratage direct, les conteneurs sont à risque pour les organisations. Cela a alors motivé la création d'outils d’analyse des images de conteneurs pour déterminer le risque posant aux organisations. Il en existe plusieurs, mais nous allons nous concentrer sur deux en particulier: Trivy de l’organisation Aqua et Docker Scout étant l’outil d’analyse intégré sur Docker Desktop.
+En résumé, les conteneurs Docker sont alors des cibles d’attaques par des acteurs malveillants. Que ce soit par le cryptojacking, l’attaque de chaîne d’approvisionnement ou le piratage direct, les conteneurs sont à risque pour les organisations. Cela a alors motivé la création d'outils d’analyse des images de conteneurs pour déterminer le risque posant aux organisations. Il en existe plusieurs, mais nous allons nous concentrer sur deux en particulier: Trivy de l’organisation Aqua et Docker Scout étant l’outil d’analyse intégré sur Docker Desktop. 
 \subsubsection{Aqua Trivy}
-Trivy est un outil d’analyse d’images de conteneurs développé par l’organisation Aqua. Cet outil offre de multiples moyens d’installation, dont notamment dans un conteneur Docker dédié que nous avons pris pour le tester. \cite{trivy2026container}
+Trivy est un outil d’analyse d’images de conteneurs développé par l’organisation Aqua. Cet outil offre de multiples moyens d’installation, dont notamment dans un conteneur Docker dédié que nous avons pris pour le tester \cite{trivy2026container}. \\
 \newline
-Cet outil fonctionne en analysant les fichiers dans l’image. D’abord, elle charge la base de données des vulnérabilités (CVE, CWE), puis identifie les librairies, les dépendances et les binaires des logiciels installés ainsi que leurs versions. Ensuite, il consulte la base de données pour déterminer si les logiciels installés ont des vulnérabilités trouvées. L’outil collecte et analyse les informations et présente à l’utilisateur toutes les vulnérabilités avec leur sévérité, la version du logiciel présent et s’il y a un patch pour le résoudre. Les utilisateurs pourront alors prendre des décisions sur comment gérer ces vulnérabilités, ou même s’ils veulent encore utiliser l’image. \cite{trivy2026container}
+Cet outil fonctionne en analysant les fichiers dans l’image. D’abord, elle charge la base de données des vulnérabilités (CVE, CWE), puis identifie les librairies, les dépendances et les binaires des logiciels installés ainsi que leurs versions. Ensuite, il consulte la base de données pour déterminer si les logiciels installés ont des vulnérabilités trouvées. L’outil collecte et analyse les informations et présente à l’utilisateur toutes les vulnérabilités avec leur sévérité, la version du logiciel présent et s’il y a un patch pour le résoudre. Les utilisateurs pourront alors prendre des décisions sur comment gérer ces vulnérabilités, ou même s’ils veulent encore utiliser l’image \cite{trivy2026container}. \\
 \newline
-L’outil peut aussi détecter des erreurs de configuration dans l’image du conteneur, plus précisément dans des scripts IaC, et dans les métadonnées. Les secrets exposés comme des mots de passe, des clés d’API, des jetons, des variables d’environnement ou autres données sensibles, ainsi que les licenses seront détectés si l’option est activée. \cite{trivy2026container}
+L’outil peut aussi détecter des erreurs de configuration dans l’image du conteneur, plus précisément dans des scripts IaC, et dans les métadonnées. Les secrets exposés comme des mots de passe, des clés d’API, des jetons, des variables d’environnement ou autres données sensibles, ainsi que les licenses seront détectés si l’option est activée \cite{trivy2026container}. \\
 \newline
-Trivy peut consulter le Software Bill of Materials (SBOM), un inventaire généré par le fournisseur de l’image contenant les noms et versions de toutes les librairies, les dépendances et les composantes. Avec cela, il peut mener son analyse des vulnérabilités. \cite{trivy2026container}
+Trivy peut consulter le Software Bill of Materials (SBOM), un inventaire généré par le fournisseur de l’image contenant les noms et versions de toutes les librairies, les dépendances et les composantes. Avec cela, il peut mener son analyse des vulnérabilités \cite{trivy2026container}.
 \subsubsection{Docker Scout}
-Docker Scout est similaire à Trivy, sauf que ce dernier se contente d'analyser les métadonnées et le Software Bill of Materials (SBOM). Docker Scout vérifie si chacune d’entre elles a des CVE ou des CWE associés publiés avec le score CVSS et EPSS. De plus, cet outil est intégré dans l’interface d’utilisateur de Docker Desktop, demandant aucune autre installation pour l’utilisateur. \cite{docker2026scout}
+Docker Scout est similaire à Trivy, sauf que ce dernier se contente d'analyser les métadonnées et le Software Bill of Materials (SBOM). Docker Scout vérifie si chacune d’entre elles a des CVE ou des CWE associés publiés avec le score CVSS et EPSS. De plus, cet outil est intégré dans l’interface d’utilisateur de Docker Desktop, demandant aucune autre installation pour l’utilisateur \cite{docker2026scout}.
 \subsubsection{Atouts de ces outils}
-Ces outils sont relativement simples à utiliser et produisent des rapports assez détaillés pour les utilisateurs. Les utilisateurs démarrent Docker Scout en sélectionnant l’image à analyser et en appuyant sur le bouton. Ils obtiennent alors la liste de vulnérabilités associées à chaque dépendances avec la criticité en plus d’un code de couleur indiquant celle-ci. Aqua Trivy requiert certes une installation à part entière, mais les utilisateurs peuvent simplement télécharger l’image de conteneur dédié à l’outil, démarrer un conteneur et exécuter l’analyse des images.
+Ces outils sont relativement simples à utiliser et produisent des rapports assez détaillés pour les utilisateurs. Les utilisateurs démarrent Docker Scout en sélectionnant l’image à analyser et en appuyant sur le bouton. Ils obtiennent alors la liste de vulnérabilités associées à chaque dépendance avec la criticité en plus d’un code de couleur indiquant celle-ci. Aqua Trivy requiert certes une installation à part entière, mais les utilisateurs peuvent simplement télécharger l’image de conteneur dédié à l’outil, démarrer un conteneur et exécuter l’analyse des images. \\
 \newline
 Un autre atout est dans leur intégration dans le cycle de développement. En effet, les développeurs peuvent exécuter Aqua Trivy sur les images avant le déploiement des conteneurs. Ainsi, cela peut réduire le vecteur d’attaque lors de la phase de développement et de déploiement
 \subsubsection{Limites de ces outils}
-La limite principale de Docker Scout est sur la génération de l’attestation du SBOM dépend du fournisseur. En effet, la responsabilité de sa génération et de son intégrité est au fournisseur, et donc peut être soit falsifié, soit désuet ou même soit manquer des dépendances lors de sa génération. De plus, elle peut être modifiée en cours de chemin et donc requiert une signature pour la valider.
+La limite principale de Docker Scout est sur la génération de l’attestation du SBOM dépend du fournisseur. En effet, la responsabilité de sa génération et de son intégrité est au fournisseur, et donc peut être soit falsifiée, soit désuète ou même soit manquer des dépendances lors de sa génération. De plus, elle peut être modifiée en cours de chemin et donc requiert une signature pour la valider. \\
 \newline
 La limite s’appliquant à ces outils d’analyse d’image est leur portée. En effet, le but de Trivy, Docker Scout, Clair, et les autres est de déterminer si les dépendances, le système d’exploitation ou les librairies présentes ont des vulnérabilités qui ont été trouvées. Or, cela n’aide pas à découvrir:
 \begin{itemize}
@@ -150,19 +145,20 @@ La limite s’appliquant à ces outils d’analyse d’image est leur portée. E
 \end{itemize}
 Ainsi, il y a alors un vide à combler pour détecter des images ayant du contenu malfaisant caché. Ces outils, n’étant pas fait pour cette tâche, ne peuvent pas contrecarrer les techniques de crypto-jacking et la menace continue de s’amplifier. Les meilleurs moyens disponibles seraient préventifs, soit de vérifier que le fournisseur de l’image est légitime, soit d’utiliser des signatures des images pour confirmer sa légitimité ou lancer des conteneurs dans des environnements isolés.
 \subsection{Indicateurs utiles}
-Afin d'implémenter notre projet, il est important de connaître les indicateurs de cryptomining que ce soit sur l’application ou l’ordinateur en lui-même. Cela permettra de pouvoir développer un outil d’analyse dynamique et si donner le temps, une d’analyse statique
+Afin d'implémenter notre projet, il est important de connaître les indicateurs de cryptomining que ce soit sur l’application ou l’ordinateur en lui-même. Cela permettra de pouvoir développer un outil d’analyse dynamique et si donner le temps, une d’analyse statique. \\
+\newline
 \textbf{Analyse statique (image Docker):}
 \begin{itemize}
     \item Présence de binaires connus:
-    \begin{itemize2}
+    \begin{itemize}
         \item XMRig (51\% en 2021 selon L’ENISA) \cite{enisa2021threatlandscape} \cite{checkpoint2026xmrig} \cite{yevdokimova2022xmrig}
         \item Minerd \cite{checkpoint2026xmrig} \cite{cryptominerbros2025tools}
-    \end{itemize2}
+    \end{itemize}
     \item Dockerfile suspect:
-    \begin{itemize3}
+    \begin{itemize}
         \item curl, sh
         \item wget
-    \end{itemize3}
+    \end{itemize}
     \item Permissions excessives
     \item Scripts shell
     \item URLs de pools de minage de cryptomonnaies
@@ -176,43 +172,43 @@ Afin d'implémenter notre projet, il est important de connaître les indicateurs
     \item Connexions réseau persistantes \cite{cryptominerbros2025tools}
     \item Environnement sécurisé et isolé pour rouler ces environnements
 \end{itemize}
-\newline
-Le problème majeur de l’analyse dynamique pour notre projet est le manque de référence permettant de guider nos choix pour faire une analyse pendant l’exécution d’une image de docker. Nous chercherons alors des indicateurs potentiels venant de la source de revenu des crypto jackings, les machines pour miner de la cryptomonnaie.
+Le problème majeur de l’analyse dynamique pour notre projet est le manque de référence permettant de guider nos choix pour faire une analyse pendant l’exécution d’une image de docker. Nous chercherons alors des indicateurs potentiels venant de la source de revenu des crypto jackings, les machines pour miner de la cryptomonnaie. \\
 \newline 
 La première sera la surveillance du réseau pour détecter les connexions et voir si elles accèdent à des sites de cryptomining connues ou des serveurs inconnus. Il faudra aussi regarder dans le cas de manque de connexion à l’internet car les systèmes de crypto mining nécessitent une connexion constante pour marcher ce qui peut révéler un malware si l’ordinateur tente des requêtes internet sans être sollicité.
 \newline
 
 \section{Retour sur la Problématique}
-Les images Docker issues de registres publics peuvent intégrer des comportements malveillants, notamment du cryptomining clandestin, qui ne sont pas détectés efficacement par les outils de sécurité actuels reposant principalement sur l’analyse statique et des bases de vulnérabilités connues.
+Les images Docker issues de registres publics peuvent intégrer des comportements malveillants, notamment du cryptomining clandestin, qui ne sont pas détectés efficacement par les outils de sécurité actuels reposant principalement sur l’analyse statique et des bases de vulnérabilités connues. \\
 \newline
-Dans quelle mesure une approche combinant l’analyse statique et l’analyse dynamique du comportement à l’exécution permet-elle d’identifier de manière plus fiable des images Docker impliquées dans des activités de cryptomining malveillant, tout en limitant les faux positifs, par rapport aux solutions existantes?
+Dans quelle mesure une approche combinant l’analyse statique et l’analyse dynamique du comportement à l’exécution permet-elle d’identifier de manière plus fiable des images Docker impliquées dans des activités de cryptomining malveillant, tout en limitant les faux positifs, par rapport aux solutions existantes? \\
 \newline
-Ensuite, les opérations de crypto mining nécessitent des appareils puissants pour le fonctionnement pour les calculs ce qui peut démontrer la présence d’un malware si l’utilisation du GPU/CPU grimpe sans l’utilisation d’une application consommant autant.
-Une analyse des fichiers et programmes serait utile pour faire la détection de programmes cachés dans l’appareil.
+Ensuite, les opérations de crypto mining nécessitent des appareils puissants pour le fonctionnement pour les calculs ce qui peut démontrer la présence d’un malware si l’utilisation du GPU/CPU grimpe sans l’utilisation d’une application consommant autant. \\
 \newline
-Une ouverture soudaine du terminal au téléchargement est incriminant de la présence d’un malware au même point qu’une demande de redémarrage de l’ordinateur. Les deux peuvent apporter des modifications sur l’appareil au dépend de l’utilisateur.
+Une analyse des fichiers et programmes serait utile pour faire la détection de programmes cachés dans l’appareil. \\
+\newline
+Une ouverture soudaine du terminal au téléchargement est incriminant de la présence d’un malware au même point qu’une demande de redémarrage de l’ordinateur. Les deux peuvent apporter des modifications sur l’appareil au dépend de l’utilisateur. \\
 \newline
 En conclusion, l’analyse dynamique va reposer sur regarder le réseau et le comportement de l’appareil ainsi que le code des liens pour regarder. De par la dangerosité de l’utilisation de tel outil, un environnement virtuel est nécessaire pour accomplir des tests sans danger pour l’appareil de test.
 \newline
 \section{Justification du projet et délimitation de son périmètre}
-La problématique de la sécurité des images Docker s’inscrit dans un contexte plus large de détection de logiciels malveillants. En effet, une image Docker peut intégrer diverses formes de comportements malveillants, tels que des mécanismes d’exfiltration de données, des portes dérobées, des charges de rançongiciel ou encore des activités frauduleuses dissimulées.
+La problématique de la sécurité des images Docker s’inscrit dans un contexte plus large de détection de logiciels malveillants. En effet, une image Docker peut intégrer diverses formes de comportements malveillants, tels que des mécanismes d’exfiltration de données, des portes dérobées, des charges de rançongiciel ou encore des activités frauduleuses dissimulées. \\
 \newline
-Toutefois, le projet présenté ici ne vise pas à proposer une solution générale capable de détecter l’ensemble des malwares susceptibles d’être intégrés dans une image Docker. Un tel objectif dépasserait largement le cadre expérimental d’un projet académique et nécessiterait des ressources techniques et d’infrastructures considérables. Nous avons donc fait le choix d’une délimitation volontaire du périmètre de projet.
+Toutefois, le projet présenté ici ne vise pas à proposer une solution générale capable de détecter l’ensemble des malwares susceptibles d’être intégrés dans une image Docker. Un tel objectif dépasserait largement le cadre expérimental d’un projet académique et nécessiterait des ressources techniques et d’infrastructures considérables. Nous avons donc fait le choix d’une délimitation volontaire du périmètre de projet. \\
 \newline
-Notre travail se concentre spécifiquement sur une sous-catégorie de comportements malveillants: le crypto-jacking exécuté au sein de conteneurs Docker. Ce choix est motivé par plusieurs facteurs. Premièrement, le cryptomining présente des caractéristiques comportementales observables et mesurables, telles que des utilisations soutenue et continue des ressources CPU ou GPU, des connexions réseau persistantes vers des pools de minage, ou encore l’exécution de processus spécifiques. Ces éléments constituent des indicateurs de compromission (IoC) relativement bien documentés par la communauté en sécurité logicielle.
+Notre travail se concentre spécifiquement sur une sous-catégorie de comportements malveillants: le crypto-jacking exécuté au sein de conteneurs Docker. Ce choix est motivé par plusieurs facteurs. Premièrement, le cryptomining présente des caractéristiques comportementales observables et mesurables, telles que des utilisations soutenue et continue des ressources CPU ou GPU, des connexions réseau persistantes vers des pools de minage, ou encore l’exécution de processus spécifiques. Ces éléments constituent des indicateurs de compromission (IoC) relativement bien documentés par la communauté en sécurité logicielle. \\
 \newline
-Deuxièmement, les outils et binaires associés au cryptomining, tels que XMRig ou Minerd, sont largement connus et fréquemment identifiés dans les environnements conteneurisés compromis. Cette documentation existante permet de définir des critères d’analyse précis, reproductibles, et exploitables dans un cadre expérimental.
+Deuxièmement, les outils et binaires associés au cryptomining, tels que XMRig ou Minerd, sont largement connus et fréquemment identifiés dans les environnements conteneurisés compromis. Cette documentation existante permet de définir des critères d’analyse précis, reproductibles, et exploitables dans un cadre expérimental. \\
 \newline
-Ce positionnement se distingue des outils d’analyse d’images Docker existants, qui se concentrent principalement sur la détection de vulnérabilités logicielles, d’erreurs de configuration ou de secrets mal protégés. Ces outils s’appuient souvent sur un SBOM afin d’identifier les composants logiciels présents et signaler les versions vulnérables, dans le but d’améliorer la gestion des mises à jour et de réduire la surface d’attaque. Or, dans notre cas, ces approches ne répondent pas directement à la problématique étudiée, à savoir la détection d’images malveillantes intégrant des mineurs de crypto-monnaies tout en se présentant comme des images légitimes, souvent largement diffusées et utilisées.
+Ce positionnement se distingue des outils d’analyse d’images Docker existants, qui se concentrent principalement sur la détection de vulnérabilités logicielles, d’erreurs de configuration ou de secrets mal protégés. Ces outils s’appuient souvent sur un SBOM afin d’identifier les composants logiciels présents et signaler les versions vulnérables, dans le but d’améliorer la gestion des mises à jour et de réduire la surface d’attaque. Or, dans notre cas, ces approches ne répondent pas directement à la problématique étudiée, à savoir la détection d’images malveillantes intégrant des mineurs de crypto-monnaies tout en se présentant comme des images légitimes, souvent largement diffusées et utilisées. \\
 \newline
-Ainsi, nous proposons le développement d’un prototype orienté vers la détection de bibliothèques, de binaires et de comportements associés au cryptomining dissimulé dans des images Docker apparemment légitimes. Ce prototype repose sur deux axes principaux: d’une part, une analyse heuristique du comportement du conteneur, notamment sur l’utilisation anormale des ressources de la machine hôte (CPU, GPU et mémoire), et d’autre part, l’exécution des images dans un environnement contrôlé, permettant une observation sécurisée sans impact sur le système hôte.
+Ainsi, nous proposons le développement d’un prototype orienté vers la détection de bibliothèques, de binaires et de comportements associés au cryptomining dissimulé dans des images Docker apparemment légitimes. Ce prototype repose sur deux axes principaux: d’une part, une analyse heuristique du comportement du conteneur, notamment sur l’utilisation anormale des ressources de la machine hôte (CPU, GPU et mémoire), et d’autre part, l’exécution des images dans un environnement contrôlé, permettant une observation sécurisée sans impact sur le système hôte. \\
 \newline
-En restreignant volontairement le périmètre du projet, cette approche permet de mener une analyse plus approfondie et de bien évaluer la capacité de détection proposée. Ce travail vise à contribuer à la détection du cryptomining obfusqué dans des environnements conteneurisés et à limiter l’exploitation abusive des ressources de l’hôte par des acteurs malveillants.
+En restreignant volontairement le périmètre du projet, cette approche permet de mener une analyse plus approfondie et de bien évaluer la capacité de détection proposée. Ce travail vise à contribuer à la détection du cryptomining obfusqué dans des environnements conteneurisés et à limiter l’exploitation abusive des ressources de l’hôte par des acteurs malveillants. \\
 
 \section{Définition de l'implémentation}
 
 \subsection{Squelette de l'architecture de l'outil}
-Cette section présente le squelette de l’architecture de l’outil proposé. Elle décrit les composants principaux du système et la manière dont ils interagissent afin de permettre l’analyse et la détection de comportements de cryptomining dans des images Docker.
+Cette section présente le squelette de l’architecture de l’outil proposé. Elle décrit les composants principaux du système et la manière dont ils interagissent afin de permettre l’analyse et la détection de comportements de cryptomining dans des images Docker. \\
 \newline
 L’objectif de l’outil est de permettre à un utilisateur ou une organisation de fournir une image Docker à l’outil d’analyse. L’outil va effectuer une analyse de cette image et selon le résultat de cette analyse va classifier l’image comme étant légitime, suspecte ou potentiellement malveillante.
 \clearpage
@@ -297,8 +293,8 @@ Mesure :
 \end{itemize}
 
 \subsubsection{Principes généraux}
-L’architecture proposée s’inspire des modèles classiques d’analyse de malwares décrits par le NIST \cite{souppaya2013nist80083} \cite{nelson2025nist80061} et des approches comportementales présentées dans la littérature académique \cite{dahlmanns2023secrets} \cite{bufalino2025orca}.
-
+L’architecture proposée s’inspire des modèles classiques d’analyse de malwares décrits par le NIST \cite{souppaya2013nist80083} \cite{nelson2025nist80061} et des approches comportementales présentées dans la littérature académique \cite{dahlmanns2023secrets} \cite{bufalino2025orca}. \\
+\newline
 L’objectif est de concevoir un outil expérimental, permettant:
 \begin{itemize}
     \item la collecte d’indicateurs mesurables,
@@ -307,24 +303,29 @@ L’objectif est de concevoir un outil expérimental, permettant:
     \item la génération d’un verdict explicable.
 \end{itemize}
 
-Le modèle ATT\&CK de MITRE \cite{mitreT1204003} sert de référence pour structurer les comportements observables et positionner les techniques analysées.
+Le modèle ATT\&CK de MITRE \cite{mitreT1204003} sert de référence pour structurer les comportements observables et positionner les techniques analysées.  \\
 
 \subsubsection{Architecture globale proposée}
-L’outil s’organise autour de cinq modules principaux:
-
-\textbf{Acquisition des données}
-Ce premier module est dédié à la collecte des données pertinentes sur le comportement du conteneur lorsqu’il est exécuté dans un environnement isolé. Ce module mesure notamment l’utilisation des ressources CPU et mémoire, les tentatives de connexions réseau, les processus actifs et autres. L’importance de ce type de collecte est documentée par des travaux montrant que les campagnes de cryptomining présentent des signatures comportementales répétitives telles qu’une forte utilisation des ressources ou des connexions persistantes vers des pools de minage \cite{kaspersky2022cryptojacking} \cite{enisa2021threatlandscape} \cite{kim2025ebpf} \cite{hackernews2024docker}. 
-
-\textbf{Analyse statique}
-L’analyse statique consiste à inspecter le contenu de l’image sans l’exécuter. Elle inclut l’extraction des métadonnées, des couches Docker et l’inspection des fichiers pour identifier des chaînes suspectes (telles que des adresses de pools de minage ou des binaires associées à des mineurs connus). Puisque ce type d’outils existe déjà sur le marché via des solutions gratuites et propriétaires, cet aspect de l’outil sera mis de côté pour notre implémentation expérimentale. Pour une question de temps et de ressources, le module sur l’acquisition des données et celui de l’analyse comportementale seront proposés lors du développement.
-
-\textbf{Analyse comportementale}
-Le coeur de l’outil repose sur l’analyse comportementale dynamique, réalisée en exécutant l’image dans un environnement isolé. L’outil observe, en temps réel, les paramètres d’exécution (utilisation CPU/GPU, connexions réseau, processus en cours) afin de détecter des motifs associés au cryptomining. Cette approche est soutenue par des travaux récents qui utilisent des techniques eBPF et l’apprentissage supervisé pour surveiller et classifier des comportements de conteneurs en fonction de leurs activités à l’exécution \cite{kim2025ebpf}.
-
-\textbf{Corrélation d’indicateurs et scoring}
-Les résultats des modules d’analyse statique et dynamique sont ensuite envoyés dans un moteur de corrélation qui applique un système de scoring. Inspiré des approches de détection comportementale, ce modèle de scoring pondère les indicateurs observés afin de réduire les faux positifs, un enjeu reconnu dans la détection d’intrusions et comportements malveillants \cite{bufalino2025orca}. Par exemple, une forte utilisation CPU jumelée à des connexions réseau vers des pools listés comme suspects peut augmenter le score d’une possible image compromise.
-
-\textbf{Rapport}
+L’outil s’organise autour de cinq modules principaux: \\
+\newline
+\textbf{Acquisition des données} \\
+\newline
+Ce premier module est dédié à la collecte des données pertinentes sur le comportement du conteneur lorsqu’il est exécuté dans un environnement isolé. Ce module mesure notamment l’utilisation des ressources CPU et mémoire, les tentatives de connexions réseau, les processus actifs et autres. L’importance de ce type de collecte est documentée par des travaux montrant que les campagnes de cryptomining présentent des signatures comportementales répétitives telles qu’une forte utilisation des ressources ou des connexions persistantes vers des pools de minage \cite{kaspersky2022cryptojacking} \cite{enisa2021threatlandscape} \cite{kim2025ebpf} \cite{hackernews2024docker}. \\
+\newline
+\textbf{Analyse statique} \\
+\newline
+L’analyse statique consiste à inspecter le contenu de l’image sans l’exécuter. Elle inclut l’extraction des métadonnées, des couches Docker et l’inspection des fichiers pour identifier des chaînes suspectes (telles que des adresses de pools de minage ou des binaires associées à des mineurs connus). Puisque ce type d’outils existe déjà sur le marché via des solutions gratuites et propriétaires, cet aspect de l’outil sera mis de côté pour notre implémentation expérimentale. Pour une question de temps et de ressources, le module sur l’acquisition des données et celui de l’analyse comportementale seront proposés lors du développement. \\
+\newline
+\textbf{Analyse comportementale} \\
+\newline
+Le coeur de l’outil repose sur l’analyse comportementale dynamique, réalisée en exécutant l’image dans un environnement isolé. L’outil observe, en temps réel, les paramètres d’exécution (utilisation CPU/GPU, connexions réseau, processus en cours) afin de détecter des motifs associés au cryptomining. Cette approche est soutenue par des travaux récents qui utilisent des techniques eBPF et l’apprentissage supervisé pour surveiller et classifier des comportements de conteneurs en fonction de leurs activités à l’exécution \cite{kim2025ebpf}. \\
+\newline
+\textbf{Corrélation d’indicateurs et scoring} \\
+\newline
+Les résultats des modules d’analyse statique et dynamique sont ensuite envoyés dans un moteur de corrélation qui applique un système de scoring. Inspiré des approches de détection comportementale, ce modèle de scoring pondère les indicateurs observés afin de réduire les faux positifs, un enjeu reconnu dans la détection d’intrusions et comportements malveillants \cite{bufalino2025orca}. Par exemple, une forte utilisation CPU jumelée à des connexions réseau vers des pools listés comme suspects peut augmenter le score d’une possible image compromise. \\
+\newline
+\textbf{Rapport} \\
+\newline
 Enfin, l’outil génère un rapport structuré détaillant les indicateurs observés, le score final de classification et les éléments justificatifs associés. Cette traçabilité correspond aux recommandations de bonnes pratiques en matière de gestion des incidents de sécurité: fournir un verdict explicable et une justification des décisions prises par l’outil.
 
 \subsection{Plan de projet}
@@ -385,7 +386,7 @@ Livrables:
 \end{itemize}
 
 \subsubsection{Phase 2: Expérimentation du composant d’analyse statique}
-L'analyse statique est déjà un outil en place accessible à tous. Le but ici est de déterminer si, selon le temps fourni, l’implémentation de ce composant dédié à l’analyse statique de cryptojacking est pertinente.
+L'analyse statique est déjà un outil en place accessible à tous. Le but ici est de déterminer si, selon le temps fourni, l’implémentation de ce composant dédié à l’analyse statique de cryptojacking est pertinente. \\
 \newline
 Objectifs:
 \begin{itemize}
