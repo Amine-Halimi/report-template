@@ -152,11 +152,48 @@ Ainsi, il y a alors un vide à combler pour détecter des images ayant du conten
 \subsection{Indicateurs utiles}
 Afin d'implémenter notre projet, il est important de connaître les indicateurs de cryptomining que ce soit sur l’application ou l’ordinateur en lui-même. Cela permettra de pouvoir développer un outil d’analyse dynamique et si donner le temps, une d’analyse statique
 \textbf{Analyse statique (image Docker):}
+\begin{itemize}
+    \item Présence de binaires connus:
+    \begin{itemize2}
+        \item XMRig (51\% en 2021 selon L’ENISA) \cite{enisa2021threatlandscape} \cite{checkpoint2026xmrig} \cite{yevdokimova2022xmrig}
+        \item Minerd \cite{checkpoint2026xmrig} \cite{cryptominerbros2025tools}
+    \end{itemize2}
+    \item Dockerfile suspect:
+    \begin{itemize3}
+        \item curl, sh
+        \item wget
+    \end{itemize3}
+    \item Permissions excessives
+    \item Scripts shell
+    \item URLs de pools de minage de cryptomonnaies
+\end{itemize}
+\textbf{Analyse dynamique:}
+\begin{itemize}
+    \item Ouverture de terminal à l’exécution
+    \item Utilisation CPU/GPU anormale \cite{checkpoint2026xmrig}
+    \item Processus cachés
+    \item Redémarrage automatique
+    \item Connexions réseau persistantes \cite{cryptominerbros2025tools}
+    \item Environnement sécurisé et isolé pour rouler ces environnements
+\end{itemize}
+\newline
+Le problème majeur de l’analyse dynamique pour notre projet est le manque de référence permettant de guider nos choix pour faire une analyse pendant l’exécution d’une image de docker. Nous chercherons alors des indicateurs potentiels venant de la source de revenu des crypto jackings, les machines pour miner de la cryptomonnaie.
+\newline 
+La première sera la surveillance du réseau pour détecter les connexions et voir si elles accèdent à des sites de cryptomining connues ou des serveurs inconnus. Il faudra aussi regarder dans le cas de manque de connexion à l’internet car les systèmes de crypto mining nécessitent une connexion constante pour marcher ce qui peut révéler un malware si l’ordinateur tente des requêtes internet sans être sollicité.
+\newline
+
 \section{Retour sur la Problématique}
 Les images Docker issues de registres publics peuvent intégrer des comportements malveillants, notamment du cryptomining clandestin, qui ne sont pas détectés efficacement par les outils de sécurité actuels reposant principalement sur l’analyse statique et des bases de vulnérabilités connues.
 \newline
 Dans quelle mesure une approche combinant l’analyse statique et l’analyse dynamique du comportement à l’exécution permet-elle d’identifier de manière plus fiable des images Docker impliquées dans des activités de cryptomining malveillant, tout en limitant les faux positifs, par rapport aux solutions existantes?
-
+\newline
+Ensuite, les opérations de crypto mining nécessitent des appareils puissants pour le fonctionnement pour les calculs ce qui peut démontrer la présence d’un malware si l’utilisation du GPU/CPU grimpe sans l’utilisation d’une application consommant autant.
+Une analyse des fichiers et programmes serait utile pour faire la détection de programmes cachés dans l’appareil.
+\newline
+Une ouverture soudaine du terminal au téléchargement est incriminant de la présence d’un malware au même point qu’une demande de redémarrage de l’ordinateur. Les deux peuvent apporter des modifications sur l’appareil au dépend de l’utilisateur.
+\newline
+En conclusion, l’analyse dynamique va reposer sur regarder le réseau et le comportement de l’appareil ainsi que le code des liens pour regarder. De par la dangerosité de l’utilisation de tel outil, un environnement virtuel est nécessaire pour accomplir des tests sans danger pour l’appareil de test.
+\newline
 \section{Justification du projet et délimitation de son périmètre}
 La problématique de la sécurité des images Docker s’inscrit dans un contexte plus large de détection de logiciels malveillants. En effet, une image Docker peut intégrer diverses formes de comportements malveillants, tels que des mécanismes d’exfiltration de données, des portes dérobées, des charges de rançongiciel ou encore des activités frauduleuses dissimulées.
 \newline
