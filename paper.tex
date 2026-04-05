@@ -2,76 +2,34 @@
 
 \section{Problématique à résoudre}
 \subsection{Le crypto-jacking comme menace informatique moderne}
-La mine de crypto-monnaie, ou cryptomining en anglais, est la génération des pièces de crypto-monnaie et la validation des transactions faites dans un réseau blockchain pour mettre à jour le registre. Ceux qui font le minage de crypto-monnaie sont payés avec de la crypto-monnaie et comme ces monnaies digitales valent énormément d’argent, cette pratique est forcément très rentable \cite{freeman2026mining}. \\
+La mine de crypto-monnaie, ou cryptomining en anglais, est la génération des pièces de crypto-monnaie et la validation des transactions faites dans un réseau blockchain pour mettre à jour le registre. Ceux qui font le minage de crypto-monnaie sont payés avec de la crypto-monnaie et comme ces monnaies digitales valent énormément d'argent, cette pratique est forcément très rentable \cite{freeman2026mining}. \\
 \newline
-Cependant, cette technologie a attiré l’attention d’acteurs malveillants. Les propriétaires de portefeuilles de crypto-monnaies restent anonymes et les transactions ne révèlent pas les identités des individus impliqués. Ainsi, cet anonymat permet aux cybercriminels de se faire de l’argent sans se faire prendre. C’est pour cette raison que les victimes du rançongiciel WannaCry devaient payer en bitcoin à un portefeuille digital \cite{uptycs2026teamtnt}. De plus, comme cette technologie est très rentable, il est évident que cela attire les cybercriminels ayant un but de gain d’argent. \\
+Cependant, cette technologie a attiré l'attention d'acteurs malveillants. Les propriétaires de portefeuilles de crypto-monnaies restent anonymes et les transactions ne révèlent pas les identités des individus impliqués. Ainsi, cet anonymat permet aux cybercriminels de se faire de l'argent sans se faire prendre. C'est pour cette raison que les victimes du rançongiciel WannaCry devaient payer en bitcoin à un portefeuille digital \cite{uptycs2026teamtnt}. De plus, comme cette technologie est très rentable, il est évident que cela attire les cybercriminels ayant un but de gain d'argent. \\
 \newline
-Ainsi, il n’est pas étonnant que des acteurs malfaisants cherchent à exploiter les machines de leurs victimes pour la génération de crypto-monnaies. Cela peut être de la forme de minage de crypto-monnaies sur la machine de leurs victimes, ou bien voler les pièces de crypto-monnaies déjà présentes. Cette pratique s’appelle le crypto-jacking. En cas légitime, une personne qui pratique le minage de crypto-monnaie mettrait en place son propre environnement avec du matériel acheté légalement, soit une salle de cartes graphiques avec un serveur de contrôle avec le système de refroidissement nécessaire entre autres. 
+Ainsi, il n'est pas étonnant que des acteurs malfaisants cherchent à exploiter les machines de leurs victimes pour la génération de crypto-monnaies. Cela peut être de la forme de minage de crypto-monnaies sur la machine de leurs victimes, ou bien voler les pièces de crypto-monnaies déjà présentes. Cette pratique s'appelle le crypto-jacking. En cas légitime, une personne qui pratique le minage de crypto-monnaie mettrait en place son propre environnement avec du matériel acheté légalement, soit une salle de cartes graphiques avec un serveur de contrôle avec le système de refroidissement nécessaire entre autres. 
 \subsection{Le cryptomining malveillant dans les environnements conteneurisés}
 Docker est la technologie de choix pour les développeurs. La conteneurisation permet à ces derniers de facilement déployer leurs applications dans un environnement qu'ils contrôlent et de les migrer avec aisance. De plus, les développeurs peuvent obtenir ou même publier leurs propres images de conteneur sur la plateforme Docker Hub, permettant ainsi la collaboration communautaire de tous les utilisateurs. \\
 \newline
-Cependant, les acteurs malfaisants ont aussi prêté attention à Docker Hub. Ces acteurs ont remarqué que la plateforme mettait beaucoup de confiance envers ses  utilisateurs, laissant n’importe qui se créer un compte publier des images. De plus, Docker Hub ne vérifie pas individuellement la nature de l’image avant de la publier, ce qui explique la prolifération des images malveillantes. C’est ainsi qu’il y a eu des attaques de chaînes d’approvisionnement sous la forme de typosquatting, une pratique visant à ressembler le nom d’une image légitime pour tromper un utilisateur de télécharger une image malveillante. \\
+Cependant, les acteurs malfaisants ont aussi prêté attention à Docker Hub. Ces acteurs ont remarqué que la plateforme mettait beaucoup de confiance envers ses  utilisateurs, laissant n'importe qui se créer un compte publier des images. De plus, Docker Hub ne vérifie pas individuellement la nature de l'image avant de la publier, ce qui explique la prolifération des images malveillantes. C'est ainsi qu'il y a eu des attaques de chaînes d'approvisionnement sous la forme de typosquatting, une pratique visant à ressembler le nom d'une image légitime pour tromper un utilisateur de télécharger une image malveillante. \\
 \newline
-En plus de cela, les images de conteneurs ont certainement des vulnérabilités logicielles dont des acteurs malveillants peuvent tirer avantage. Des étudiantes de l’université des sciences et technologies norvégiennes ont révélé en 2020 que la quantité de vulnérabilités introduites sur Docker Hub a augmenté avec les images de type certifiée ayant le plus de vulnérabilités \cite{wist2020docker}. Cette étude corrobore avec une autre étude indiquant que les images de base, c’est-à-dire des images seulement avec le système d’exploitation et le minimum de librairies utilisées pour construire des images plus concrètes, était une source principale des vulnérabilités. Ces vulnérabilités persistent alors dans les images dérivées, ce qui augmente le nombre de conteneurs vulnérables à des acteurs malveillants \cite{haque2021baseimage}. 
+En plus de cela, les images de conteneurs ont certainement des vulnérabilités logicielles dont des acteurs malveillants peuvent tirer avantage. Des étudiantes de l'université des sciences et technologies norvégiennes ont révélé en 2020 que la quantité de vulnérabilités introduites sur Docker Hub a augmenté avec les images de type certifiée ayant le plus de vulnérabilités \cite{wist2020docker}. Cette étude corrobore avec une autre étude indiquant que les images de base, c'est-à-dire des images seulement avec le système d'exploitation et le minimum de librairies utilisées pour construire des images plus concrètes, était une source principale des vulnérabilités. Ces vulnérabilités persistent alors dans les images dérivées, ce qui augmente le nombre de conteneurs vulnérables à des acteurs malveillants \cite{haque2021baseimage}. 
 \subsection{Réalité du phénomène}
-Ce problème n’est pas un phénomène niche. En effet, l’organisation Sysdig a trouvé 1650 images de conteneurs ayant du malware sur la plate-forme Docker-Hub. Parmi les comportements malicieux, le crypto-jacking est le plus populaire, soit 608 images suivies par le type 281 ayant des secrets cachés \cite{sysdig2026maliciousimages} \cite{bleeping2026maliciouscontainers}. Le but est que des utilisateurs ou des compagnies téléchargent des images malicieuses, alors que ces derniers voulaient déployer facilement leurs applications. Ainsi, lorsque les utilisateurs déploient un conteneur, celui-ci se mettra à utiliser les ressources de la machine hôte pour miner ou voler de la crypto-monnaie. \\
+Ce problème n'est pas un phénomène niche. En effet, l'organisation Sysdig a trouvé 1650 images de conteneurs ayant du malware sur la plate-forme Docker-Hub. Parmi les comportements malicieux, le crypto-jacking est le plus populaire, soit 608 images suivies par le type 281 ayant des secrets cachés \cite{sysdig2026maliciousimages} \cite{bleeping2026maliciouscontainers}. Le but est que des utilisateurs ou des compagnies téléchargent des images malicieuses, alors que ces derniers voulaient déployer facilement leurs applications. Ainsi, lorsque les utilisateurs déploient un conteneur, celui-ci se mettra à utiliser les ressources de la machine hôte pour miner ou voler de la crypto-monnaie. \\
 \newline
-Pour continuer, le site BleepingComputer a rapporté en 2021 que deux douzaines d’images malveillantes de crypto-jacking postées sur Docker Hub ont été téléchargées plus de 20 millions de fois\cite{bleeping2026cryptominers}. Ces images malveillantes auraient pu avoir généré 200,000 USD de revenu pour leurs fournisseurs. Ainsi, cela est donc un moyen efficace de générer des profits sans investir dans leur propre environnement.
+Pour continuer, le site BleepingComputer a rapporté en 2021 que deux douzaines d'images malveillantes de crypto-jacking postées sur Docker Hub ont été téléchargées plus de 20 millions de fois\cite{bleeping2026cryptominers}. Ces images malveillantes auraient pu avoir généré 200,000 USD de revenu pour leurs fournisseurs. Ainsi, cela est donc un moyen efficace de générer des profits sans investir dans leur propre environnement.
 \subsection{Conclusion}
-Les constats précédents mettent en évidence la réalité et la gravité du cryptomining malveillant au sein des images Docker provenant de registres publics. Malgré l’existence de solutions de sécurité largement adoptées dans les chaînes CI/CD, ces menaces continuent de se propager et d’échapper aux mécanismes de détection traditionnels. \\
+Les constats précédents mettent en évidence la réalité et la gravité du cryptomining malveillant au sein des images Docker provenant de registres publics. Malgré l'existence de solutions de sécurité largement adoptées dans les chaînes CI/CD, ces menaces continuent de se propager et d'échapper aux mécanismes de détection traditionnels. \\
 \newline
-Afin de mieux comprendre les limites actuelles de la protection des images conteneurisées, il est nécessaire d’analyser les travaux existants et les outils de référence utilisés pour la sécurisation des images Docker. Cette analyse a pour objectif de situer notre problématique par rapport aux solutions existantes, d’examiner les mesures de sécurité proposées, ainsi que leurs limites dans la détection des comportements de cryptomining malveillant, et de justifier les décisions techniques qui seront prises pour ce projet. \\
+Afin de mieux comprendre les limites actuelles de la protection des images conteneurisées, il est nécessaire d'analyser les travaux existants et les outils de référence utilisés pour la sécurisation des images Docker. Cette analyse a pour objectif de situer notre problématique par rapport aux solutions existantes, d'examiner les mesures de sécurité proposées, ainsi que leurs limites dans la détection des comportements de cryptomining malveillant, et de justifier les décisions techniques qui seront prises pour ce projet. \\
 \section{État de l'art}
-\subsection{Problématiques antérieures (et leurs solutions)}
-Voici quelques problèmes enregistrés par divers groupes en lien avec Docker et les images malveillantes. \\
-\subsubsection{FortiCNAPP}
-Une attaque produite depuis un conteneur a été faite par le groupe TeamTNT pour envoyer des programmes malveillants via des images infectées sur un conteneur. \\
-\newline
-\textbf{Méthode d’intrusion}
-\newline
-Pour introduire les images malicieuses, le groupe à obtenu accès à un compte Docker légitime à cause d’authentification présente dans un github public appartenant à l’utilisateur ce qui à donner accès au compte \cite{mitreT1552002}. Le groupe à ensuite télécharger des images infectées pour lancer le téléchargement de programmes intrusifs chez les victimes \cite{mitreT1204003}. Les programmes malicieux présents dans l’image sont un IRC bot Tsunami, un outil de capture de bannières et un outil de diffusion de services \cite{mitreT1525}. \\
-\newline
-\textbf{Détection}
-\newline
-L’intrusion à été détectée par une équipe de recherche de FortiCNAPP qui avait déployé plusieurs conteneurs intentionnellement vulnérables pour déclencher des attaques et ainsi recevoir des informations \cite{mitreT1610}. En recevant les informations, ils ont trouvé que les images provenaient d’un conteneur de l’utilisateur légitime et on put communiquer avec lui pour effacer les conteneurs. \\
-\newline
-\textbf{Prévention conseillée}
-\newline
-Pour s’assurer de la sécurité d’une image et mitiger les risques, on peut regarder périodiquement l’intégrité des images pour vérifier qu’ils ne contiennent pas de programme malicieux \cite{mitreM1047}. Faire venir des images de groupe authentiques et fiables pour assurer la validité de l’image \cite{mitreM1045} ou modifier les permissions pour éviter que quiconque puisse changer une image \cite{mitreM1026}. \\
-\newline
-\subsubsection{Document sur la sécurité des conteneurs selon OWASP \cite{kulkarni2020containers}:}
-Les conteneurs sont conçus en isolant les applications des autres, ils sont utilisés pour analyser des programmes malicieux, rouler des micro-services, déployer rapidement des tâches répétitives et pour du cloud. Cependant, les conteneurs sont à risque d’attaque autant sur le conteneur que sur les applications. Notamment, des menaces telles que l’exploitation de configuration mal sécurisée, une augmentation des privilèges sur le conteneur, l’exploitation de vulnérabilités dans le système du conteneur ou sur l’hôte. \\
-\newline
-Plusieurs couches composant un conteneur ont des méthodes de contrôles pour réguler les conteneurs et possède aussi des vulnérabilités, voici quelques exemples: \\
-\newline
-La couche d’opération des systèmes possède quelques vulnérabilités:
-\begin{itemize}
-    \item à risque si des applications non sollicitées sont présentes
-    \item les applications ont des erreurs de code
-    \item un accès est mal appelé ce qui ouvre une fenêtre d’opportunité pour un attaquant
-\end{itemize}
-Aussi, contrôler les dépôts est important pour éviter l’exploitation du dépôt:
-\begin{itemize}
-    \item Avoir des images immuables
-    \item Renforcer l’isolation/segmentation des services
-    \item Superviser le conteneur pour détecter les actions suspectes
-    \item Mettre en quarantaine si compromis
-    \item etc.
-\end{itemize}
-Il est conseillé pour sécuriser l'environnement du conteneur de sécuriser aussi:
-\begin{itemize}
-    \item Le système d’opération
-    \item L'environnement d’exécution de conteneur
-    \item Le répertoire d’image
-    \item Les outils d’orchestrations
-    \item Les applications présentes dans le conteneur
-\end{itemize}
+\subsection{Problématique antérieure (et leur solution)}
+Voici un cas d'attaque correspondant à notre projet. \\
 \subsubsection{Cas de Uptycs \cite{cso2026wannacry}:}
 Le groupe TeamTNT à déployé un conteneur à image malicieuse pour infecter des ordinateurs et les utiliser pour faire du cryptomining. \\
 \newline
-\textbf{Méthode d’attaque}
+\textbf{Méthode d'attaque}
 \newline
-Plan de l’attaque:
+Plan de l'attaque:
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.5\textwidth]{uptyc_attack.png}
@@ -87,71 +45,43 @@ Plan de l’attaque:
 \end{itemize}
 \textbf{Détection}
 \newline 
-Aucune méthode de détection n’est mentionnée dans cet article.
-Bien que les conseils offerts par le site soient utilisés pour vendre leurs produits, on peut sécuriser les conteneurs en installant des outils CI/CD pour scanner des images avant qu’ils ne soient déployés dans la production. On peut aussi surveiller et analyser en lien avec la CIS référence pour détecter des problèmes de configuration. \\
+Aucune méthode de détection n'est mentionnée dans cet article.
+Bien que les conseils offerts par le site soient utilisés pour vendre leurs produits, on peut sécuriser les conteneurs en installant des outils CI/CD pour scanner des images avant qu'ils ne soient déployés dans la production. On peut aussi surveiller et analyser en lien avec la CIS référence pour détecter des problèmes de configuration. \\
 
-\subsubsection{Cas jfrog \cite{wist2020docker}:}
-Un autre exemple d’utilisation d’image sur Docker pour l’envoi de malware et de phishing-scams vient du site jfrog. \\
-\newline
-\textbf{Méthode d’attaque}
-\newline
-Docker fournit des dépôts pouvant contenir des images qui sont promus par une section HTML et une courte description. Cependant, la documentation est utilisée pour lancer des malwares sur les personnes souhaitant obtenir des images. Environ 4.6 millions de dépôts ne contiennent pas d’image, uniquement une description et une introduction pour attirer des utilisateurs dans le piège. \\
-\newline
-\textbf{Liens infectés}
-\newline
-Pour lancer les malwares, des liens sont utilisés pour rediriger les utilisateurs vers un serveur notamment en cachant la redirection dans le nom de fichier encodé. En 2023, une nouvelle sorte de redirection est utilisée en redirigeant l’utilisateur vers un nouveau domaine sans qu’il soit averti grâce à un paramètre (usg) qui empêche l’apparition d’un avertissement de changement de domaine. \\
-\newline
-\textbf{Fonctionnement du malware}
-\newline
-Le malware communique avec le serveur C2C via des requêtes HTTP POST sous forme JSON encodé en HEX. La clé est différente cependant et demande un malware du serveur qui envoie une requête d’initialisation pour obtenir des informations sur le système. \\
-\clearpage
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.5\textwidth]{jfrog_campaign.png}
-    \caption{Fonctionnement dun malware de jfrog}
-\end{figure}
-\textbf{EBook Phishing}
-\newline
-Beaucoup de dépôt (1 million en 2021) propose la vente de eBook gratuit. Une fois le livre ouvert, un site d’abonnement est envoyé pour que l’utilisateur rentre les informations de sa carte de crédit dans le but de voler les informations. \\
-\newline
-\textbf{Recommandation}
-\newline
-Comme indiqué plus haut, un dépôt sans image est un indicateur sérieux de la possibilité d’un malware. Suivre des ressources fiables comme les images officielles de Docker ou les tags valides évitent des problèmes. Ne pas faire confiance à ceux qui vendent un produit supposément gratuit, mais demandent votre carte de crédit est une autre précaution importante. \\
-\newline
 \subsection{Analyse des outils existants}
-En résumé, les conteneurs Docker sont alors des cibles d’attaques par des acteurs malveillants. Que ce soit par le cryptojacking, l’attaque de chaîne d’approvisionnement ou le piratage direct, les conteneurs sont à risque pour les organisations. Cela a alors motivé la création d'outils d’analyse des images de conteneurs pour déterminer le risque posant aux organisations. Il en existe plusieurs, mais nous allons nous concentrer sur deux en particulier: Trivy de l’organisation Aqua et Docker Scout étant l’outil d’analyse intégré sur Docker Desktop. 
+En résumé, les conteneurs Docker sont alors des cibles d'attaques par des acteurs malveillants. Que ce soit par le cryptojacking, l'attaque de chaîne d'approvisionnement ou le piratage direct, les conteneurs sont à risque pour les organisations. Cela a alors motivé la création d'outils d'analyse des images de conteneurs pour déterminer le risque posant aux organisations. Il en existe plusieurs, mais nous allons nous concentrer sur deux en particulier: Trivy de l'organisation Aqua et Docker Scout étant l'outil d'analyse intégré sur Docker Desktop. 
 \subsubsection{Aqua Trivy}
-Trivy est un outil d’analyse d’images de conteneurs développé par l’organisation Aqua. Cet outil offre de multiples moyens d’installation, dont notamment dans un conteneur Docker dédié que nous avons pris pour le tester \cite{trivy2026container}. \\
+Trivy est un outil d'analyse d'images de conteneurs développé par l'organisation Aqua. Cet outil offre de multiples moyens d'installation, dont notamment dans un conteneur Docker dédié que nous avons pris pour le tester \cite{trivy2026container}. \\
 \newline
-Cet outil fonctionne en analysant les fichiers dans l’image. D’abord, elle charge la base de données des vulnérabilités (CVE, CWE), puis identifie les librairies, les dépendances et les binaires des logiciels installés ainsi que leurs versions. Ensuite, il consulte la base de données pour déterminer si les logiciels installés ont des vulnérabilités trouvées. L’outil collecte et analyse les informations et présente à l’utilisateur toutes les vulnérabilités avec leur sévérité, la version du logiciel présent et s’il y a un patch pour le résoudre. Les utilisateurs pourront alors prendre des décisions sur comment gérer ces vulnérabilités, ou même s’ils veulent encore utiliser l’image \cite{trivy2026container}. \\
+Cet outil fonctionne en analysant les fichiers dans l'image. D'abord, elle charge la base de données des vulnérabilités (CVE, CWE), puis identifie les librairies, les dépendances et les binaires des logiciels installés ainsi que leurs versions. Ensuite, il consulte la base de données pour déterminer si les logiciels installés ont des vulnérabilités trouvées. L'outil collecte et analyse les informations et présente à l'utilisateur toutes les vulnérabilités avec leur sévérité, la version du logiciel présent et s'il y a un patch pour le résoudre. Les utilisateurs pourront alors prendre des décisions sur comment gérer ces vulnérabilités, ou même s'ils veulent encore utiliser l'image \cite{trivy2026container}. \\
 \newline
-L’outil peut aussi détecter des erreurs de configuration dans l’image du conteneur, plus précisément dans des scripts IaC, et dans les métadonnées. Les secrets exposés comme des mots de passe, des clés d’API, des jetons, des variables d’environnement ou autres données sensibles, ainsi que les licenses seront détectés si l’option est activée \cite{trivy2026container}. \\
+L'outil peut aussi détecter des erreurs de configuration dans l'image du conteneur, plus précisément dans des scripts IaC, et dans les métadonnées. Les secrets exposés comme des mots de passe, des clés d'API, des jetons, des variables d'environnement ou autres données sensibles, ainsi que les licenses seront détectés si l'option est activée \cite{trivy2026container}. \\
 \newline
-Trivy peut consulter le Software Bill of Materials (SBOM), un inventaire généré par le fournisseur de l’image contenant les noms et versions de toutes les librairies, les dépendances et les composantes. Avec cela, il peut mener son analyse des vulnérabilités \cite{trivy2026container}.
+Trivy peut consulter le Software Bill of Materials (SBOM), un inventaire généré par le fournisseur de l'image contenant les noms et versions de toutes les librairies, les dépendances et les composantes. Avec cela, il peut mener son analyse des vulnérabilités \cite{trivy2026container}.
 \subsubsection{Docker Scout}
-Docker Scout est similaire à Trivy, sauf que ce dernier se contente d'analyser les métadonnées et le Software Bill of Materials (SBOM). Docker Scout vérifie si chacune d’entre elles a des CVE ou des CWE associés publiés avec le score CVSS et EPSS. De plus, cet outil est intégré dans l’interface d’utilisateur de Docker Desktop, demandant aucune autre installation pour l’utilisateur \cite{docker2026scout}.
+Docker Scout est similaire à Trivy, sauf que ce dernier se contente d'analyser les métadonnées et le Software Bill of Materials (SBOM). Docker Scout vérifie si chacune d'entre elles a des CVE ou des CWE associés publiés avec le score CVSS et EPSS. De plus, cet outil est intégré dans l'interface d'utilisateur de Docker Desktop, demandant aucune autre installation pour l'utilisateur \cite{docker2026scout}.
 \subsubsection{Atouts de ces outils}
-Ces outils sont relativement simples à utiliser et produisent des rapports assez détaillés pour les utilisateurs. Les utilisateurs démarrent Docker Scout en sélectionnant l’image à analyser et en appuyant sur le bouton. Ils obtiennent alors la liste de vulnérabilités associées à chaque dépendance avec la criticité en plus d’un code de couleur indiquant celle-ci. Aqua Trivy requiert certes une installation à part entière, mais les utilisateurs peuvent simplement télécharger l’image de conteneur dédié à l’outil, démarrer un conteneur et exécuter l’analyse des images. \\
+Ces outils sont relativement simples à utiliser et produisent des rapports assez détaillés pour les utilisateurs. Les utilisateurs démarrent Docker Scout en sélectionnant l'image à analyser et en appuyant sur le bouton. Ils obtiennent alors la liste de vulnérabilités associées à chaque dépendance avec la criticité en plus d'un code de couleur indiquant celle-ci. Aqua Trivy requiert certes une installation à part entière, mais les utilisateurs peuvent simplement télécharger l'image de conteneur dédié à l'outil, démarrer un conteneur et exécuter l'analyse des images. \\
 \newline
-Un autre atout est dans leur intégration dans le cycle de développement. En effet, les développeurs peuvent exécuter Aqua Trivy sur les images avant le déploiement des conteneurs. Ainsi, cela peut réduire le vecteur d’attaque lors de la phase de développement et de déploiement
+Un autre atout est dans leur intégration dans le cycle de développement. En effet, les développeurs peuvent exécuter Aqua Trivy sur les images avant le déploiement des conteneurs. Ainsi, cela peut réduire le vecteur d'attaque lors de la phase de développement et de déploiement
 \subsubsection{Limites de ces outils}
-La limite principale de Docker Scout est sur la génération de l’attestation du SBOM dépend du fournisseur. En effet, la responsabilité de sa génération et de son intégrité est au fournisseur, et donc peut être soit falsifiée, soit désuète ou même soit manquer des dépendances lors de sa génération. De plus, elle peut être modifiée en cours de chemin et donc requiert une signature pour la valider. \\
+La limite principale de Docker Scout est sur la génération de l'attestation du SBOM dépend du fournisseur. En effet, la responsabilité de sa génération et de son intégrité est au fournisseur, et donc peut être soit falsifiée, soit désuète ou même soit manquer des dépendances lors de sa génération. De plus, elle peut être modifiée en cours de chemin et donc requiert une signature pour la valider. \\
 \newline
-La limite s’appliquant à ces outils d’analyse d’image est leur portée. En effet, le but de Trivy, Docker Scout, Clair, et les autres est de déterminer si les dépendances, le système d’exploitation ou les librairies présentes ont des vulnérabilités qui ont été trouvées. Or, cela n’aide pas à découvrir:
+La limite s'appliquant à ces outils d'analyse d'image est leur portée. En effet, le but de Trivy, Docker Scout, Clair, et les autres est de déterminer si les dépendances, le système d'exploitation ou les librairies présentes ont des vulnérabilités qui ont été trouvées. Or, cela n'aide pas à découvrir:
 \begin{itemize}
-    \item Des vulnérabilités Zero-day peuvent être présentes sans que le fournisseur de l’image ou les utilisateurs le sachent.
-    \item Des virus ou du contenu malveillant compromis dans l’image du conteneur.
+    \item Des vulnérabilités Zero-day peuvent être présentes sans que le fournisseur de l'image ou les utilisateurs le sachent.
+    \item Des virus ou du contenu malveillant compromis dans l'image du conteneur.
     \item Du malware comme du rançongiciel ou du crypto-jacking.
 \end{itemize}
-Ainsi, il y a alors un vide à combler pour détecter des images ayant du contenu malfaisant caché. Ces outils, n’étant pas fait pour cette tâche, ne peuvent pas contrecarrer les techniques de crypto-jacking et la menace continue de s’amplifier. Les meilleurs moyens disponibles seraient préventifs, soit de vérifier que le fournisseur de l’image est légitime, soit d’utiliser des signatures des images pour confirmer sa légitimité ou lancer des conteneurs dans des environnements isolés.
+Ainsi, il y a alors un vide à combler pour détecter des images ayant du contenu malfaisant caché. Ces outils, n'étant pas fait pour cette tâche, ne peuvent pas contrecarrer les techniques de crypto-jacking et la menace continue de s'amplifier. Les meilleurs moyens disponibles seraient préventifs, soit de vérifier que le fournisseur de l'image est légitime, soit d'utiliser des signatures des images pour confirmer sa légitimité ou lancer des conteneurs dans des environnements isolés.
 \subsection{Indicateurs utiles}
-Afin d'implémenter notre projet, il est important de connaître les indicateurs de cryptomining que ce soit sur l’application ou l’ordinateur en lui-même. Cela permettra de pouvoir développer un outil d’analyse dynamique et si donner le temps, une d’analyse statique. \\
+Afin d'implémenter notre projet, il est important de connaître les indicateurs de cryptomining que ce soit sur l'application ou l'ordinateur en lui-même. Cela permettra de pouvoir développer un outil d'analyse dynamique et si donner le temps, une d'analyse statique. \\
 \newline
 \textbf{Analyse statique (image Docker):}
 \begin{itemize}
     \item Présence de binaires connus:
     \begin{itemize}
-        \item XMRig (51\% en 2021 selon L’ENISA) \cite{enisa2021threatlandscape} \cite{checkpoint2026xmrig} \cite{yevdokimova2022xmrig}
+        \item XMRig (51\% en 2021 selon L'ENISA) \cite{enisa2021threatlandscape} \cite{checkpoint2026xmrig} \cite{yevdokimova2022xmrig}
         \item Minerd \cite{checkpoint2026xmrig} \cite{cryptominerbros2025tools}
     \end{itemize}
     \item Dockerfile suspect:
@@ -165,52 +95,52 @@ Afin d'implémenter notre projet, il est important de connaître les indicateurs
 \end{itemize}
 \textbf{Analyse dynamique:}
 \begin{itemize}
-    \item Ouverture de terminal à l’exécution
+    \item Ouverture de terminal à l'exécution
     \item Utilisation CPU/GPU anormale \cite{checkpoint2026xmrig}
     \item Processus cachés
     \item Redémarrage automatique
     \item Connexions réseau persistantes \cite{cryptominerbros2025tools}
     \item Environnement sécurisé et isolé pour rouler ces environnements
 \end{itemize}
-Le problème majeur de l’analyse dynamique pour notre projet est le manque de référence permettant de guider nos choix pour faire une analyse pendant l’exécution d’une image de docker. Nous chercherons alors des indicateurs potentiels venant de la source de revenu des crypto jackings, les machines pour miner de la cryptomonnaie. \\
+Le problème majeur de l'analyse dynamique pour notre projet est le manque de référence permettant de guider nos choix pour faire une analyse pendant l'exécution d'une image de docker. Nous chercherons alors des indicateurs potentiels venant de la source de revenu des crypto jackings, les machines pour miner de la cryptomonnaie. \\
 \newline 
-La première sera la surveillance du réseau pour détecter les connexions et voir si elles accèdent à des sites de cryptomining connues ou des serveurs inconnus. Il faudra aussi regarder dans le cas de manque de connexion à l’internet car les systèmes de crypto mining nécessitent une connexion constante pour marcher ce qui peut révéler un malware si l’ordinateur tente des requêtes internet sans être sollicité.
+La première sera la surveillance du réseau pour détecter les connexions et voir si elles accèdent à des sites de cryptomining connues ou des serveurs inconnus. Il faudra aussi regarder dans le cas de manque de connexion à l'internet car les systèmes de crypto mining nécessitent une connexion constante pour marcher ce qui peut révéler un malware si l'ordinateur tente des requêtes internet sans être sollicité.
 \newline
 
 \section{Retour sur la Problématique}
-Les images Docker issues de registres publics peuvent intégrer des comportements malveillants, notamment du cryptomining clandestin, qui ne sont pas détectés efficacement par les outils de sécurité actuels reposant principalement sur l’analyse statique et des bases de vulnérabilités connues. \\
+Les images Docker issues de registres publics peuvent intégrer des comportements malveillants, notamment du cryptomining clandestin, qui ne sont pas détectés efficacement par les outils de sécurité actuels reposant principalement sur l'analyse statique et des bases de vulnérabilités connues. \\
 \newline
-Dans quelle mesure une approche combinant l’analyse statique et l’analyse dynamique du comportement à l’exécution permet-elle d’identifier de manière plus fiable des images Docker impliquées dans des activités de cryptomining malveillant, tout en limitant les faux positifs, par rapport aux solutions existantes? \\
+Dans quelle mesure une approche combinant l'analyse statique et l'analyse dynamique du comportement à l'exécution permet-elle d'identifier de manière plus fiable des images Docker impliquées dans des activités de cryptomining malveillant, tout en limitant les faux positifs, par rapport aux solutions existantes? \\
 \newline
-Ensuite, les opérations de crypto mining nécessitent des appareils puissants pour le fonctionnement pour les calculs ce qui peut démontrer la présence d’un malware si l’utilisation du GPU/CPU grimpe sans l’utilisation d’une application consommant autant. \\
+Ensuite, les opérations de crypto mining nécessitent des appareils puissants pour le fonctionnement pour les calculs ce qui peut démontrer la présence d'un malware si l'utilisation du GPU/CPU grimpe sans l'utilisation d'une application consommant autant. \\
 \newline
-Une analyse des fichiers et programmes serait utile pour faire la détection de programmes cachés dans l’appareil. \\
+Une analyse des fichiers et programmes serait utile pour faire la détection de programmes cachés dans l'appareil. \\
 \newline
-Une ouverture soudaine du terminal au téléchargement est incriminant de la présence d’un malware au même point qu’une demande de redémarrage de l’ordinateur. Les deux peuvent apporter des modifications sur l’appareil au dépend de l’utilisateur. \\
+Une ouverture soudaine du terminal au téléchargement est incriminant de la présence d'un malware au même point qu'une demande de redémarrage de l'ordinateur. Les deux peuvent apporter des modifications sur l'appareil au dépend de l'utilisateur. \\
 \newline
-En conclusion, l’analyse dynamique va reposer sur regarder le réseau et le comportement de l’appareil ainsi que le code des liens pour regarder. De par la dangerosité de l’utilisation de tel outil, un environnement virtuel est nécessaire pour accomplir des tests sans danger pour l’appareil de test.
+En conclusion, l'analyse dynamique va reposer sur regarder le réseau et le comportement de l'appareil ainsi que le code des liens pour regarder. De par la dangerosité de l'utilisation de tel outil, un environnement virtuel est nécessaire pour accomplir des tests sans danger pour l'appareil de test.
 \newline
 \section{Justification du projet et délimitation de son périmètre}
-La problématique de la sécurité des images Docker s’inscrit dans un contexte plus large de détection de logiciels malveillants. En effet, une image Docker peut intégrer diverses formes de comportements malveillants, tels que des mécanismes d’exfiltration de données, des portes dérobées, des charges de rançongiciel ou encore des activités frauduleuses dissimulées. \\
+La problématique de la sécurité des images Docker s'inscrit dans un contexte plus large de détection de logiciels malveillants. En effet, une image Docker peut intégrer diverses formes de comportements malveillants, tels que des mécanismes d'exfiltration de données, des portes dérobées, des charges de rançongiciel ou encore des activités frauduleuses dissimulées. \\
 \newline
-Toutefois, le projet présenté ici ne vise pas à proposer une solution générale capable de détecter l’ensemble des malwares susceptibles d’être intégrés dans une image Docker. Un tel objectif dépasserait largement le cadre expérimental d’un projet académique et nécessiterait des ressources techniques et d’infrastructures considérables. Nous avons donc fait le choix d’une délimitation volontaire du périmètre de projet. \\
+Toutefois, le projet présenté ici ne vise pas à proposer une solution générale capable de détecter l'ensemble des malwares susceptibles d'être intégrés dans une image Docker. Un tel objectif dépasserait largement le cadre expérimental d'un projet académique et nécessiterait des ressources techniques et d'infrastructures considérables. Nous avons donc fait le choix d'une délimitation volontaire du périmètre de projet. \\
 \newline
-Notre travail se concentre spécifiquement sur une sous-catégorie de comportements malveillants: le crypto-jacking exécuté au sein de conteneurs Docker. Ce choix est motivé par plusieurs facteurs. Premièrement, le cryptomining présente des caractéristiques comportementales observables et mesurables, telles que des utilisations soutenue et continue des ressources CPU ou GPU, des connexions réseau persistantes vers des pools de minage, ou encore l’exécution de processus spécifiques. Ces éléments constituent des indicateurs de compromission (IoC) relativement bien documentés par la communauté en sécurité logicielle. \\
+Notre travail se concentre spécifiquement sur une sous-catégorie de comportements malveillants: le crypto-jacking exécuté au sein de conteneurs Docker. Ce choix est motivé par plusieurs facteurs. Premièrement, le cryptomining présente des caractéristiques comportementales observables et mesurables, telles que des utilisations soutenue et continue des ressources CPU ou GPU, des connexions réseau persistantes vers des pools de minage, ou encore l'exécution de processus spécifiques. Ces éléments constituent des indicateurs de compromission (IoC) relativement bien documentés par la communauté en sécurité logicielle. \\
 \newline
-Deuxièmement, les outils et binaires associés au cryptomining, tels que XMRig ou Minerd, sont largement connus et fréquemment identifiés dans les environnements conteneurisés compromis. Cette documentation existante permet de définir des critères d’analyse précis, reproductibles, et exploitables dans un cadre expérimental. \\
+Deuxièmement, les outils et binaires associés au cryptomining, tels que XMRig ou Minerd, sont largement connus et fréquemment identifiés dans les environnements conteneurisés compromis. Cette documentation existante permet de définir des critères d'analyse précis, reproductibles, et exploitables dans un cadre expérimental. \\
 \newline
-Ce positionnement se distingue des outils d’analyse d’images Docker existants, qui se concentrent principalement sur la détection de vulnérabilités logicielles, d’erreurs de configuration ou de secrets mal protégés. Ces outils s’appuient souvent sur un SBOM afin d’identifier les composants logiciels présents et signaler les versions vulnérables, dans le but d’améliorer la gestion des mises à jour et de réduire la surface d’attaque. Or, dans notre cas, ces approches ne répondent pas directement à la problématique étudiée, à savoir la détection d’images malveillantes intégrant des mineurs de crypto-monnaies tout en se présentant comme des images légitimes, souvent largement diffusées et utilisées. \\
+Ce positionnement se distingue des outils d'analyse d'images Docker existants, qui se concentrent principalement sur la détection de vulnérabilités logicielles, d'erreurs de configuration ou de secrets mal protégés. Ces outils s'appuient souvent sur un SBOM afin d'identifier les composants logiciels présents et signaler les versions vulnérables, dans le but d'améliorer la gestion des mises à jour et de réduire la surface d'attaque. Or, dans notre cas, ces approches ne répondent pas directement à la problématique étudiée, à savoir la détection d'images malveillantes intégrant des mineurs de crypto-monnaies tout en se présentant comme des images légitimes, souvent largement diffusées et utilisées. \\
 \newline
-Ainsi, nous proposons le développement d’un prototype orienté vers la détection de bibliothèques, de binaires et de comportements associés au cryptomining dissimulé dans des images Docker apparemment légitimes. Ce prototype repose sur deux axes principaux: d’une part, une analyse heuristique du comportement du conteneur, notamment sur l’utilisation anormale des ressources de la machine hôte (CPU, GPU et mémoire), et d’autre part, l’exécution des images dans un environnement contrôlé, permettant une observation sécurisée sans impact sur le système hôte. \\
+Ainsi, nous proposons le développement d'un prototype orienté vers la détection de bibliothèques, de binaires et de comportements associés au cryptomining dissimulé dans des images Docker apparemment légitimes. Ce prototype repose sur deux axes principaux: d'une part, une analyse heuristique du comportement du conteneur, notamment sur l'utilisation anormale des ressources de la machine hôte (CPU, GPU et mémoire), et d'autre part, l'exécution des images dans un environnement contrôlé, permettant une observation sécurisée sans impact sur le système hôte. \\
 \newline
-En restreignant volontairement le périmètre du projet, cette approche permet de mener une analyse plus approfondie et de bien évaluer la capacité de détection proposée. Ce travail vise à contribuer à la détection du cryptomining obfusqué dans des environnements conteneurisés et à limiter l’exploitation abusive des ressources de l’hôte par des acteurs malveillants. \\
+En restreignant volontairement le périmètre du projet, cette approche permet de mener une analyse plus approfondie et de bien évaluer la capacité de détection proposée. Ce travail vise à contribuer à la détection du cryptomining obfusqué dans des environnements conteneurisés et à limiter l'exploitation abusive des ressources de l'hôte par des acteurs malveillants. \\
 
 \section{Définition de l'implémentation}
 
 \subsection{Squelette de l'architecture de l'outil}
-Cette section présente le squelette de l’architecture de l’outil proposé. Elle décrit les composants principaux du système et la manière dont ils interagissent afin de permettre l’analyse et la détection de comportements de cryptomining dans des images Docker. \\
+Cette section présente le squelette de l'architecture de l'outil proposé. Elle décrit les composants principaux du système et la manière dont ils interagissent afin de permettre l'analyse et la détection de comportements de cryptomining dans des images Docker. \\
 \newline
-L’objectif de l’outil est de permettre à un utilisateur ou une organisation de fournir une image Docker à l’outil d’analyse. L’outil va effectuer une analyse de cette image et selon le résultat de cette analyse va classifier l’image comme étant légitime, suspecte ou potentiellement malveillante.
+L'objectif de l'outil est de permettre à un utilisateur ou une organisation de fournir une image Docker à l'outil d'analyse. L'outil va effectuer une analyse de cette image et selon le résultat de cette analyse va classifier l'image comme étant légitime, suspecte ou potentiellement malveillante.
 \clearpage
 \begin{figure}[h!]
     \centering
@@ -219,29 +149,29 @@ L’objectif de l’outil est de permettre à un utilisateur ou une organisation
 \end{figure}
 
 \textbf{Interface CLI / API}
-Point d’entrée de l’outil. Doit :
+Point d'entrée de l'outil. Doit :
 \begin{itemize}
-    \item Charger l’image Docker
-    \item Déclencher l’analyse
+    \item Charger l'image Docker
+    \item Déclencher l'analyse
     \item Afficher les résultats
 \end{itemize}
 
-\textbf{Orchestrateur d’analyse}
+\textbf{Orchestrateur d'analyse}
 Coordonne les différentes phases :
 \begin{itemize}
     \item Analyse statique
     \item Analyse dynamique
     \begin{itemize}
-        \item Lancement de l’environnement isolé
+        \item Lancement de l'environnement isolé
     \end{itemize}
     \item Accumulation des résultats
 \end{itemize}
 
 \textbf{Analyse statique}
 \begin{itemize}
-    \item Inspection des couches de l’image
+    \item Inspection des couches de l'image
     \item Lecture du Dockerfile
-    \item Génération d’un SBOM
+    \item Génération d'un SBOM
     \item Extraction des binaires
     \item Analyse des permissions
     \item Recherche de chaînes suspectes (pools, wallets)
@@ -279,7 +209,7 @@ Mesure :
 \textbf{Analyse de corrélation / scoring}
 \begin{itemize}
     \item Corrélation entre analyse statique et dynamique
-    \item Utilisation d’un score pondéré
+    \item Utilisation d'un score pondéré
     \item Détermination des seuils de classification
 \end{itemize}
 
@@ -287,53 +217,53 @@ Mesure :
 \begin{itemize}
     \item Score final
     \item IoC détectés
-    \item Logs d’exécution
+    \item Logs d'exécution
     \item Classification
     \item Export dans un format structuré (JSON, CSV, etc.)
 \end{itemize}
 
 \subsubsection{Principes généraux}
-L’architecture proposée s’inspire des modèles classiques d’analyse de malwares décrits par le NIST \cite{souppaya2013nist80083} \cite{nelson2025nist80061} et des approches comportementales présentées dans la littérature académique \cite{dahlmanns2023secrets} \cite{bufalino2025orca}. \\
+L'architecture proposée s'inspire des modèles classiques d'analyse de malwares décrits par le NIST \cite{souppaya2013nist80083} \cite{nelson2025nist80061} et des approches comportementales présentées dans la littérature académique \cite{dahlmanns2023secrets} \cite{bufalino2025orca}. \\
 \newline
-L’objectif est de concevoir un outil expérimental, permettant:
+L'objectif est de concevoir un outil expérimental, permettant:
 \begin{itemize}
-    \item la collecte d’indicateurs mesurables,
-    \item l’analyse comportementale ciblée sur le cryptomining,
-    \item la corrélation d’IoC (Indicators of Compromise),
-    \item la génération d’un verdict explicable.
+    \item la collecte d'indicateurs mesurables,
+    \item l'analyse comportementale ciblée sur le cryptomining,
+    \item la corrélation d'IoC (Indicators of Compromise),
+    \item la génération d'un verdict explicable.
 \end{itemize}
 
 Le modèle ATT\&CK de MITRE \cite{mitreT1204003} sert de référence pour structurer les comportements observables et positionner les techniques analysées.  \\
 
 \subsubsection{Architecture globale proposée}
-L’outil s’organise autour de cinq modules principaux: \\
+L'outil s'organise autour de cinq modules principaux: \\
 \newline
 \textbf{Acquisition des données} \\
 \newline
-Ce premier module est dédié à la collecte des données pertinentes sur le comportement du conteneur lorsqu’il est exécuté dans un environnement isolé. Ce module mesure notamment l’utilisation des ressources CPU et mémoire, les tentatives de connexions réseau, les processus actifs et autres. L’importance de ce type de collecte est documentée par des travaux montrant que les campagnes de cryptomining présentent des signatures comportementales répétitives telles qu’une forte utilisation des ressources ou des connexions persistantes vers des pools de minage \cite{kaspersky2022cryptojacking} \cite{enisa2021threatlandscape} \cite{kim2025ebpf} \cite{hackernews2024docker}. \\
+Ce premier module est dédié à la collecte des données pertinentes sur le comportement du conteneur lorsqu'il est exécuté dans un environnement isolé. Ce module mesure notamment l'utilisation des ressources CPU et mémoire, les tentatives de connexions réseau, les processus actifs et autres. L'importance de ce type de collecte est documentée par des travaux montrant que les campagnes de cryptomining présentent des signatures comportementales répétitives telles qu'une forte utilisation des ressources ou des connexions persistantes vers des pools de minage \cite{kaspersky2022cryptojacking} \cite{enisa2021threatlandscape} \cite{kim2025ebpf} \cite{hackernews2024docker}. \\
 \newline
 \textbf{Analyse statique} \\
 \newline
-L’analyse statique consiste à inspecter le contenu de l’image sans l’exécuter. Elle inclut l’extraction des métadonnées, des couches Docker et l’inspection des fichiers pour identifier des chaînes suspectes (telles que des adresses de pools de minage ou des binaires associées à des mineurs connus). Puisque ce type d’outils existe déjà sur le marché via des solutions gratuites et propriétaires, cet aspect de l’outil sera mis de côté pour notre implémentation expérimentale. Pour une question de temps et de ressources, le module sur l’acquisition des données et celui de l’analyse comportementale seront proposés lors du développement. \\
+L'analyse statique consiste à inspecter le contenu de l'image sans l'exécuter. Elle inclut l'extraction des métadonnées, des couches Docker et l'inspection des fichiers pour identifier des chaînes suspectes (telles que des adresses de pools de minage ou des binaires associées à des mineurs connus). Puisque ce type d'outils existe déjà sur le marché via des solutions gratuites et propriétaires, cet aspect de l'outil sera mis de côté pour notre implémentation expérimentale. Pour une question de temps et de ressources, le module sur l'acquisition des données et celui de l'analyse comportementale seront proposés lors du développement. \\
 \newline
 \textbf{Analyse comportementale} \\
 \newline
-Le coeur de l’outil repose sur l’analyse comportementale dynamique, réalisée en exécutant l’image dans un environnement isolé. L’outil observe, en temps réel, les paramètres d’exécution (utilisation CPU/GPU, connexions réseau, processus en cours) afin de détecter des motifs associés au cryptomining. Cette approche est soutenue par des travaux récents qui utilisent des techniques eBPF et l’apprentissage supervisé pour surveiller et classifier des comportements de conteneurs en fonction de leurs activités à l’exécution \cite{kim2025ebpf}. \\
+Le coeur de l'outil repose sur l'analyse comportementale dynamique, réalisée en exécutant l'image dans un environnement isolé. L'outil observe, en temps réel, les paramètres d'exécution (utilisation CPU/GPU, connexions réseau, processus en cours) afin de détecter des motifs associés au cryptomining. Cette approche est soutenue par des travaux récents qui utilisent des techniques eBPF et l'apprentissage supervisé pour surveiller et classifier des comportements de conteneurs en fonction de leurs activités à l'exécution \cite{kim2025ebpf}. \\
 \newline
-\textbf{Corrélation d’indicateurs et scoring} \\
+\textbf{Corrélation d'indicateurs et scoring} \\
 \newline
-Les résultats des modules d’analyse statique et dynamique sont ensuite envoyés dans un moteur de corrélation qui applique un système de scoring. Inspiré des approches de détection comportementale, ce modèle de scoring pondère les indicateurs observés afin de réduire les faux positifs, un enjeu reconnu dans la détection d’intrusions et comportements malveillants \cite{bufalino2025orca}. Par exemple, une forte utilisation CPU jumelée à des connexions réseau vers des pools listés comme suspects peut augmenter le score d’une possible image compromise. \\
+Les résultats des modules d'analyse statique et dynamique sont ensuite envoyés dans un moteur de corrélation qui applique un système de scoring. Inspiré des approches de détection comportementale, ce modèle de scoring pondère les indicateurs observés afin de réduire les faux positifs, un enjeu reconnu dans la détection d'intrusions et comportements malveillants \cite{bufalino2025orca}. Par exemple, une forte utilisation CPU jumelée à des connexions réseau vers des pools listés comme suspects peut augmenter le score d'une possible image compromise. \\
 \newline
 \textbf{Rapport} \\
 \newline
-Enfin, l’outil génère un rapport structuré détaillant les indicateurs observés, le score final de classification et les éléments justificatifs associés. Cette traçabilité correspond aux recommandations de bonnes pratiques en matière de gestion des incidents de sécurité: fournir un verdict explicable et une justification des décisions prises par l’outil.
+Enfin, l'outil génère un rapport structuré détaillant les indicateurs observés, le score final de classification et les éléments justificatifs associés. Cette traçabilité correspond aux recommandations de bonnes pratiques en matière de gestion des incidents de sécurité: fournir un verdict explicable et une justification des décisions prises par l'outil.
 
 \subsection{Plan de projet}
-\underline{Objectif de l’implémentation:}
-Mettre en œuvre un prototype fonctionnel capable d’exécuter une image Docker dans un environnement contrôlé et d’observer automatiquement des comportements caractéristiques du cryptomining, afin de :
+\underline{Objectif de l'implémentation:}
+Mettre en œuvre un prototype fonctionnel capable d'exécuter une image Docker dans un environnement contrôlé et d'observer automatiquement des comportements caractéristiques du cryptomining, afin de :
 \begin{itemize}
-    \item valider les hypothèses issues de l’analyse,
-    \item démontrer la faisabilité de l’approche comportementale,
+    \item valider les hypothèses issues de l'analyse,
+    \item démontrer la faisabilité de l'approche comportementale,
     \item comparer qualitativement les résultats avec des outils existants.
 \end{itemize}
 
@@ -357,7 +287,7 @@ Livrables:
     \item Listes des techniques de monitoring
 \end{itemize}
 
-\subsubsection{Phase 1: Mise en place de l’environnement d’exécution contrôlé}
+\subsubsection{Phase 1: Mise en place de l'environnement d'exécution contrôlé}
 Objectifs:
 \begin{itemize}
     \item Garantir un environnement isolé, reproductible et sécurisé.
@@ -365,13 +295,13 @@ Objectifs:
 \end{itemize}
 Tâches:
 \begin{itemize}
-    \item Création d’un hôte d’analyse dédié
+    \item Création d'un hôte d'analyse dédié
     \begin{itemize}
         \item VM
         \item Docker installé et configuré
     \end{itemize}
-    \item Configuration de l’exécution sécurisée
-    \item Script d’orchestration
+    \item Configuration de l'exécution sécurisée
+    \item Script d'orchestration
     \begin{itemize}
         \item Lancer le conteneur
         \item Démarrer la capture des métriques
@@ -380,22 +310,22 @@ Tâches:
 \end{itemize}
 Livrables:
 \begin{itemize}
-    \item Scripts d’exécution
-    \item README d’installation
-    \item Configurations de sécurité de l’environnement isolé
+    \item Scripts d'exécution
+    \item README d'installation
+    \item Configurations de sécurité de l'environnement isolé
 \end{itemize}
 
-\subsubsection{Phase 2: Expérimentation du composant d’analyse statique}
-L'analyse statique est déjà un outil en place accessible à tous. Le but ici est de déterminer si, selon le temps fourni, l’implémentation de ce composant dédié à l’analyse statique de cryptojacking est pertinente. \\
+\subsubsection{Phase 2: Expérimentation du composant d'analyse statique}
+L'analyse statique est déjà un outil en place accessible à tous. Le but ici est de déterminer si, selon le temps fourni, l'implémentation de ce composant dédié à l'analyse statique de cryptojacking est pertinente. \\
 \newline
 Objectifs:
 \begin{itemize}
-    \item Déterminer la complexité et le besoin d’implémenter le composant d’analyse statique
+    \item Déterminer la complexité et le besoin d'implémenter le composant d'analyse statique
     \item Mesurer la valeur ajoutée par rapport aux outils existants
 \end{itemize}
 Tâches:
 \begin{itemize}
-    \item Identifier les techniques actuelles d’analyse statique pour la détection de:
+    \item Identifier les techniques actuelles d'analyse statique pour la détection de:
     \begin{itemize}
         \item code malveillant
         \item scripts de minage
@@ -406,7 +336,6 @@ Tâches:
 \end{itemize}
 Livrables:
 \begin{itemize}
-    \item Court rapport d’analyse technique
     \item Prototype expérimental minimal
 \end{itemize}
 
@@ -414,7 +343,7 @@ Livrables:
 Objectifs:
 \begin{itemize}
     \item Observer le comportement réel du conteneur pendant son exécution.
-    \item Collecter des données exploitables pour l’analyse.
+    \item Collecter des données exploitables pour l'analyse.
 \end{itemize}
 Tâches:
 \begin{itemize}
@@ -430,46 +359,29 @@ Livrables:
     \item Exemples de journalisation
 \end{itemize}
 
-\subsubsection{Phase 4: Détection et scoring comportemental}
+\subsubsection{Phase 4: Jeux de tests expérimentaux}
 Objectifs:
 \begin{itemize}
-    \item Transformer les données brutes en renseignements exploitables.
-    \item Éviter une liste de ‘logs’
-\end{itemize}
-Tâches:
-\begin{itemize}
-    \item Définition des règles de détection
-    \item Classification simple
-\end{itemize}
-Livrable:
-\begin{itemize}
-    \item Documentation de la logique du scoring
-\end{itemize}
-
-\subsubsection{Phase 5: Jeux de tests expérimentaux}
-Objectifs:
-\begin{itemize}
-    \item Évaluer l’outil sur des cas réels
+    \item Évaluer l'outil sur des cas réels
     \item Produire des résultats analysables dans le rapport
 \end{itemize}
 Tâches:
 \begin{itemize}
-    \item Sélection d’images légitimes
-    \item Sélection d’images malveillantes (ou simulées)
+    \item Sélection d'images légitimes
+    \item Sélection d'images malveillantes (ou simulées)
     \item Exécution des campagnes de test
     \item Collecte et comparaison des résultats
 \end{itemize}
 Livrables:
 \begin{itemize}
     \item Scripts de test
-    \item Datasets
 \end{itemize}
 
-\subsubsection{Phase 6: Analyse critique et comparaison}
+\subsubsection{Phase 5: Analyse critique et comparaison}
 Objectifs:
 \begin{itemize}
     \item Mettre en perspective les résultats
-    \item Relier l’implémentation et la problématique
+    \item Relier l'implémentation et la problématique
 \end{itemize}
 Tâches:
 \begin{itemize}
@@ -477,17 +389,1211 @@ Tâches:
     \item Comparaison qualitative avec outils existants
     \item Discussion des limites
 \end{itemize}
-\subsubsection{Phase 7: Finalisation pour le rapport}
+\subsubsection{Phase 6: Finalisation pour le rapport}
 Objectifs:
 \begin{itemize}
     \item Transformer le travail technique en travail de recherche
 \end{itemize}
 Tâches:
 \begin{itemize}
-    \item Description claire de l’architecture implémentée
+    \item Description claire de l'architecture implémentée
     \item Justification des choix techniques
     \item Discussion critique
-    \item Perspectives d’amélioration
+    \item Perspectives d'amélioration
 \end{itemize}
 
+\section{Implémentation}
+\subsection{Choix de Python}
+L'outil s'organise autour de cinq modules principaux: \\
+\textbf{SDK Docker officiel:}
+Le projet 'docker' (pip) offre une interface Python complète et bien documentée pour interagir avec le daemon Docker : lancer des conteneurs, lire les stats en temps réel, récupérer les logs, inspecter les processus. C'est l'outil le mieux adapté à notre besoin sans passer par des appels shell manuels. \\
+\textbf{Rapidité de prototypage:}
+Python permet d'itérer rapidement sur les règles de détection et la logique de scoring sans overhead de compilation. Pour un projet de recherche académique avec des contraintes de temps, c'est un avantage décisif. \\
+\textbf{Écosystème riche:}
+Les bibliothèques `pyyaml` (lecture des règles IoC), `typer` (CLI), et 'concurrent.futures' (analyse parallèle) sont disponibles et et à jour. \\
+\textbf{Lisibilité:}
+Le code Python est accessible à tous les membres de l'équipe peu importe leur background, facilitant la collaboration. \\
+\subsection{Structure du projet}
+\begin{lstlisting}[caption= Structure du projet]
+    cryptojack-detector/
+    |-- main.py                        # Point d'entr é e CLI
+    |-- analyzer/
+    |   |-- __init__.py
+    |   |-- dynamic.py                 # Collecte des m é triques runtime
+    |   |-- parser.py                  # Collecte les images dans les fichiers 
+                                         .gitlab-ci.yml et docker-compose.yml
+    |   |-- static.py                  # Analyse statique
+    |   |-- scoring.py                 # Corr é lation et scoring
+    |   |-- interface.py               # Dataclass pour la génération des rapports json
+    |   |-- report.py                  # Génération de rapports
+    |-- config/
+    |   |-- ioc_rules.yaml             # R ègles IoC configurables
+    |-- output/
+    |   |-- test_report.json           # Exemple rapport json
+    |-- tests/
+    |   |-- test_report.py             # Exemple g é n é ration rapport json
+    |   |-- test_images/
+    |           |-- fake_miner/
+    |           |   |-- Dockerfile         # Image malveillante simul ée
+    |           |-- docker-compose.yml     # Fichier de test docker-compose
+    |           |-- .gitlab-ci.yml         # Fichier de test gitlab-ci
+    |-- cryptojack-detector.sh             # Script de configuration r é seau
+                                           isol é et du Docker daemon
+    |-- .gitignore
+    |-- daemon.json                     # Configuration du daemon de Docker
+    |-- README.md
 
+\end{lstlisting}
+\textbf{Séparation des responsabilités:}
+Chaque module a une responsabilité unique et claire. 'dynamic.py' et 'static.py' collecte, 'scoring.py' évalue, 'report.py' présente, 'parser.py' extrait. Cette séparation facilite le travail en parallèle entre les membres de l'équipe et rend le code testable indépendamment. \\
+\textbf{Configuration externe:}
+Les règles IoC sont dans 'ioc\_rules.yaml' plutôt que dans le code. Cela permet de mettre à jour les règles (ajouter un nouveau binaire suspect, changer un seuil CPU) sans toucher au code Python. \\
+\textbf{CLI avec Typer:}
+L'interface en ligne de commande expose trois commandes : 'setup' pour initialiser l'environnement, 'analyze' pour analyser une image spécifique, 'scan-file' pour analyser toutes les images d'un fichier docker-compose ou gitlab-ci, et 'cleanup' pour détruire l'image si celle-ci se trouve être problématique. Cette structure est pensée pour l'intégration dans un pipeline CI/CD. \\
+\subsection{Mesures de sécurité}
+L'exécution d'images potentiellement malveillantes requiert un environnement rigoureusement sécurisé. Plusieurs couches de protection ont été mises en place. \\
+\subsubsection{Machine virtuelle dédiée}
+L'outil tourne sur une VM VirtualBox dédiée exclusivement à l'analyse, séparée physiquement de la machine de développement. Si un conteneur réussit à s'échapper, il n'atteint que la VM, pas la machine hôte réelle.
+\subsubsection{Réseau Docker isolé}
+Un réseau Docker nommé `cryptojack-timeout` est créé avec les options suivantes :
+\begin{lstlisting}[language=bash, caption=création du réseau isolé]
+docker network create \
+    --driver bridge \
+    --internal \
+    --subnet 192.168.100.0/24 \
+    cryptojack-timeout
+
+\end{lstlisting}
+L'option '--internal' est critique : elle supprime la route par défaut vers internet depuis les conteneurs. Un malware qui tente de contacter un pool de minage ne peut pas établir la connexion. Le trafic réseau reste cependant observable (tentatives de connexion) via les stats Docker.
+\subsubsection{Configuration du daemon Docker (daemon.json)}
+\begin{lstlisting}[language=bash, caption=fichier daemon.json]
+{
+  "no-new-privileges": true,
+  "userns-remap": "default",
+  "log-driver": "json-file",
+  "log-opts": {
+    "max-size": "10m",
+    "max-file": "3"
+  }
+}
+\end{lstlisting}
+'no-new-privileges' empêche tout processus dans le conteneur d'obtenir des privilèges supplémentaires via sudo ou setuid. 'userns-remap' remappe les UIDs du conteneur vers des UIDs non-privilégiés sur l'hôte — un processus root dans le conteneur n'est pas root sur la VM.
+\subsubsection{Limites de ressources au niveau du conteneur}
+Chaque conteneur analysé est lancé avec des limites strictes :
+\begin{lstlisting}[language=python, caption=programme de lancement du conteneur]
+container = client.containers.run(
+    image_name,
+    detach=True,
+    network=network,
+    mem_limit="512m", # Maximum de 512Mb de memoire
+    nano_cpus=1_000_000_000, # Maximum 1 CPU
+    remove=False,
+)
+\end{lstlisting}
+Ces limites préviennent qu'un malware monopolise toutes les ressources de la VM pendant l'analyse. \\
+\subsection{Commandes CLI offertes}
+L'outil expose quatre commandes via 'main.py'. Toutes les commandes s'exécutent depuis la racine du projet avec le venv activé.
+\subsubsection{setup}
+Configure l'environnement isolé nécessaire à l'analyse. \\
+\begin{lstlisting}[language=bash, caption=commande setup]
+python main.py setup
+\end{lstlisting}
+Lance le script 'cryptojack-detector.sh' qui crée le réseau Docker isolé 'cryptojack-timeout' si celui-ci n'existe pas déjà. Cette commande doit être exécutée une seule fois avant la première analyse, ou après une réinstallation de Docker. \\
+\subsubsection{analyze}
+Analyse une image Docker unique pour détecter des comportements de cryptomining. \\
+\begin{lstlisting}[language=bash, caption=commande analyze]
+# Minimal 
+python main.py analyze --image nginx:latest 
+# Complet 
+python main.py analyze --image nginx:latest 
+                        --duration 60 --interval 5
+                        --output ./rapports 
+# Avec raccourcis 
+python main.py analyze -i nginx:latest -d 60
+\end{lstlisting}
+\begin{table}[H]
+    \centering
+    \begin{tabularx}{\textwidth}{|l|l|l|X|}
+        \hline
+        \textbf{Option} & \textbf{Raccourci} & \textbf{Défaut} & \textbf{Description} \\
+        \hline
+        - -image & -i & Obligatoire & Nom de l'image Docker à analyser \\
+        \hline
+        - -duration & -d & 30 & Durée de l'observation en secondes \\
+        \hline
+        - -interval &  & 2 & Intervalle entre chaque mesure en secondes \\
+        \hline
+        - -output & -o & ./output & Dossier de sortie du rapport JSON \\
+        \hline
+    \end{tabularx}
+    \caption{Choix d'options pour l'analyse}
+\end{table}
+L'image des d'abord recherchée localement. Si elle est absente, elle est téléchargée depuis Docker Hub. Le conteneur est lancé dans le réseau isolé avec des limites de ressources (512 MB RAM, 1 CPU). Les métriques sont collectées en temps réel pour l'analyse dynamique puis exportées dans un fichier JSON nommé '\{image\}\_\{tag\}\_dynamic.json'. Pour l'analyse statique, les données sont collectées dans les couches de l'image de conteneur et du système de fichiers d'un conteneur créé à partir de l'image. Ces données sont traitées puis exportées dans un fichier JSON nommé '\{image\}\_\{tag\}\_static.json'. \\
+\subsubsection{scan-file}
+Extrait toutes les images d'un fichier 'docker-compose.yml' ou '.gitlab-ci.yml' et les analyse en parallèle. \\
+\begin{lstlisting}[language=bash, caption=commande extraction images]
+# docker-compose
+python main.py scan-file --file docker-compose.yml
+
+# gitlab-ci
+python main.py scan-file --file .gitlab-ci.yml --duration 60
+
+# Avec raccourcis
+python main.py scan-file -f docker-compose.yml -d 30
+\end{lstlisting}
+\begin{table}[H]
+    \centering
+    \begin{tabularx}{\textwidth}{|l|l|l|X|}
+        \hline
+        \textbf{Option} & \textbf{Raccourci} & \textbf{Défaut} & \textbf{Description} \\
+        \hline
+        - -file & -f & Obligatoire & Chemin vers le fichier yaml à analyser \\
+        \hline
+        - -duration & -d & 30 & Durée d'observation par image en secondes \\
+        \hline
+        - -interval &  & 2 & Intervalle entre chaque mesure en secondes \\
+        \hline
+        - -output & -o & ./output & Dossier de sortie du rapport JSON \\
+        \hline
+    \end{tabularx}
+    \caption{Choix d'options pour l'extraction}
+\end{table}
+Le type de fichier est détecté automatiquement. Pour un 'docker-compose.yml', les images sont extraites de chaque service. Pour un '.gitlab-ci.yml', l'image globale et les images par job sont extraites. Un rapport JSON séparé est généré pour chaque image analysée. \\
+\subsubsection{cleanup}
+Supprime une image Docker de la machine après analyse.
+\begin{lstlisting}[language=bash, caption=commande nettoyage]
+python main.py cleanup --image fake-miner:latest
+
+# Avec raccourci
+python main.py cleanup -i fake-miner:latest
+\end{lstlisting}
+\begin{table}[H]
+    \centering
+    \begin{tabularx}{\textwidth}{|l|l|l|X|}
+        \hline
+        \textbf{Option} & \textbf{Raccourci} & \textbf{Défaut} & \textbf{Description} \\
+        \hline
+        - -image & -i & Obligatoire & Nom de l'image Docker à supprimer \\
+        \hline
+    \end{tabularx}
+    \caption{Choix d'options pour le nettoyage}
+\end{table}
+Utile après l'analyse d'une image identifiée comme malveillante: permet de s'assurer qu'elle ne reste pas sur la machine. Utilise 'force=True' pour supprimer même si des conteneurs arrêtés référencent encore l'image. \\
+\subsection{Module dynamic.py}
+dynamic.py est une des parties les plus importantes de l'outil. Il contient toute la logique de collecte des métriques runtime et de détection des IoC dynamiques. La fonction principale collect\_dynamic\_metrics orchestre l'ensemble du cycle : lancement du conteneur, collecte des métriques, détection des IoC, arrêt propre et retour d'un objet IOC\_Dynamic. \\
+\subsubsection{Chargement des règles (load\_rules)}
+\begin{lstlisting}[language=python, caption=programme de chargement des règles]
+def load\_rules(rules\_path: str = "config/ioc\_rules.yaml") -> dict:
+\end{lstlisting}
+Charge le fichier ioc\_rules.yaml au démarrage de chaque analyse. Si le fichier est introuvable, retourne un dictionnaire vide et affiche un avertissement. L'analyse continue mais aucun IoC ne sera détecté. Le fichier est encodé en latin-1 pour éviter les erreurs de décodage sur les caractères accentués présents dans les commentaires yaml. \\
+La structure du fichier yaml attendue est :
+\begin{lstlisting}[language=bash, caption=Structure fichier yaml]
+rules:
+  ioc-binaire:
+    indicateur: [xmrig, minerd, kworker]
+  ioc-dynamic-core-limit:
+    indicateur:
+      - cpu: 70
+  ioc-persistent-connection:
+    indicateur:
+      port-suspicieux: [3333, 4444, 5555]
+\end{lstlisting}
+Toutes les fonctions de détection accèdent aux règles via 'rules.get("rules", {})': la clé racine rules est obligatoire dans le yaml.
+\subsubsection{Détection des processus suspects (check\_suspicious\_processes)}
+\begin{lstlisting}[language=python, caption=Programme de détection des processus suspects]
+def check_suspicious_processes(processes: list, rules: dict) -> list:
+\end{lstlisting}
+Compare les noms des processus actifs dans le conteneur avec la liste des binaires suspects définie dans ioc-binaire. Utilise un set pour dédupliquer les résultats: si kworker tourne en deux instances simultanées, il n'est rapporté qu'une fois dans les IoC hits. \\
+
+La comparaison est insensible à la casse (p.lower()) et cherche le nom du binaire n'importe où dans la ligne de processus. Ainsi, /bin/sh /usr/bin/kworker sera bien détecté même si la règle contient seulement kworker. La fonction retourne les noms des binaires suspects trouvés plutôt que les lignes de processus complètes, ce qui produit un résultat plus lisible dans le rapport JSON. \\
+
+Cette vérification est effectuée à chaque itération de la boucle de collecte. Les résultats sont dédupliqués globalement à la fin via list(set(ioc\_hits)). \#
+
+\subsubsection{Vérification du seuil CPU (check\_cpu\_limit)}
+\begin{lstlisting}[language=python, caption=Programme de vérification du seuil CPU]
+def check_cpu_limit(cpu_percent: float, num_cpus: int, rules: dict) -> bool:
+\end{lstlisting}
+\subsubsection{Détection des ports suspects (check\_suspicious\_ports)}
+\begin{lstlisting}[language=python, caption=Programme de détection des ports suspects]
+def check_suspicious_ports(connections: list, rules: dict) -> list:
+\end{lstlisting}
+Cherche les ports associés au cryptomining dans les données réseau collectées. Les ports 3333, 4444 et 5555 sont les ports standards du protocole Stratum utilisé par les pools de minage de cryptomonnaie. Ces ports sont entièrement configurables dans ioc\_rules.yaml: il suffit d'en ajouter ou d'en retirer sans modifier le code. \\
+
+La détection cherche la chaîne :\{port\} dans les données de connexion. Cette vérification est effectuée à chaque itération de la boucle. \\
+\subsubsection{Calcul du CPU (formule Docker)}
+\begin{lstlisting}[language=go, caption=Calcul du cpu]
+cpu_delta = (
+    stats["cpu_stats"]["cpu_usage"]["total_usage"] -
+    stats["precpu_stats"]["cpu_usage"]["total_usage"]
+)
+system_delta = (
+    stats["cpu_stats"]["system_cpu_usage"] -
+    stats["precpu_stats"]["system_cpu_usage"]
+)
+num_cpus = stats["cpu_stats"].get("online_cpus", 1)
+
+if system_delta > 0:
+    cpu_percent = min((cpu_delta / system_delta) 
+                       * num_cpus * 100.0, 100.0)
+else:
+    cpu_percent = 0.0
+\end{lstlisting}
+C'est la formule officielle Docker pour calculer le pourcentage CPU. Elle compare la consommation CPU du conteneur entre deux snapshots successifs (cpu\_delta) avec la consommation totale du système sur la même période (system\_delta). Le ratio est multiplié par num\_cpus pour obtenir un pourcentage sur l'ensemble des coeurs disponibles. \\
+
+Le min(..., 100.0) plafonne la valeur à 100\% pour éviter des pourcentages aberrants causés par des variations de timing entre les deux snapshots: ce problème a été observé en environnement VM où le system\_delta peut être anormalement petit, produisant des ratios supérieurs à 100\%. \\
+
+Le guard if system\_delta > 0 évite une division par zéro si les deux snapshots sont identiques (peut arriver au premier appel).
+
+\subsubsection{Collecte des connexions réseau}
+Les connexions réseau sont collectées via les stats Docker plutôt que via 'ss' ou 'netstat' dans le conteneur. Cette approche est plus robuste car elle fonctionne même sur des images minimalistes qui n'ont pas ces outils installés (comme nginx:alpine): la tentative d'utiliser ss sur une image nginx Alpine a produit des erreurs executable file not found in \$PATH.
+\begin{lstlisting}[language=go, caption=Calcul du cpu]
+net_stats = stats.get("networks", {})
+connections = [
+    f"{iface}: rx={data['rx_bytes']}B tx={data['tx_bytes']}B"
+    for iface, data in net_stats.items()
+]
+\end{lstlisting}
+Les données retournées par Docker Stats indiquent les bytes reçus (rx\_bytes) et envoyés (tx\_bytes) par interface réseau depuis le démarrage du conteneur. Ce sont des valeurs cumulatives: leur évolution entre les itérations permet d'observer si le conteneur tente de communiquer avec l'extérieur. \\
+\subsubsection{Collecte des logs}
+\begin{lstlisting}[language=go, caption=Collecte des logs]
+finally:
+    container.stop()
+    all_logs = collect_logs(container)  # Avant remove()
+    container.remove()
+\end{lstlisting}
+Les logs sont collectés après l'arrêt du conteneur, juste avant sa suppression. Cette séquence est critique : Docker supprime les logs avec le conteneur si remove=True est passé au lancement, d'où l'utilisation de remove=False au démarrage et d'un container.remove() manuel après la collecte. \\
+
+La collecte dans le bloc finally garantit que les logs sont toujours récupérés même si une exception survient pendant la collecte des métriques. \\
+
+Les logs capturent l'ensemble des sorties stdout/stderr pendant toute la durée d'exécution. Ils sont ensuite analysés pour détecter des tentatives d'utilisation d'outils de téléchargement (curl, wget) ou d'exécution de scripts shell suspects. Un filtre évite les faux positifs sur les extensions .sh: les logs nginx contenant des références à des scripts d'initialisation comme /docker-entrypoint.sh déclenchaient incorrectement la règle sh. \\
+
+\subsubsection{Flux d'exécution de collect\_dynamic\_metrics}
+\begin{lstlisting}[language=go, caption=Collecte des metrics]
+1. Chargement des règles IoC depuis ioc_rules.yaml
+2. Vérification de l'image (locale ou pull Docker Hub)
+3. Lancement du conteneur dans le réseau isolé avec limites 
+                                              de ressources
+4. Boucle de collecte (répétée toutes les `interval` secondes 
+                               pendant `duration` secondes) :
+   a. Récupération des stats Docker (CPU, mémoire, réseau)
+   b. Calcul CPU normalisé et plafonné à 100%
+   c. Collecte des processus actifs via docker top
+   d. Vérification des processus suspects (ioc-binaire)
+   e. Vérification des ports suspects (ioc-persistent-connection)
+5. Arrêt du conteneur
+6. Collecte des logs avant suppression
+7. Suppression du conteneur
+8. Vérification CPU max (ioc-dynamic-core-limit)
+9. Analyse des logs pour tentatives réseau suspectes (ioc-url)
+10. Construction et retour de l'objet IOC_Dynamic
+\end{lstlisting}
+
+\subsection{Module parser.py}
+parser.py permet l'intégration dans des pipelines CI/CD en extrayant automatiquement les images référencées dans des fichiers de configuration. Il expose un point d'entrée unique extract\_images qui gère la détection du type de fichier et délègue à la fonction d'extraction appropriée. \\
+\subsubsection{Détection du type de fichier (detect\_file\_type)}
+\begin{lstlisting}[language=python, caption=Détection du type de fichier]
+    def detect_file_type(filepath: str) -> str:
+\end{lstlisting}
+Détecte automatiquement si le fichier est un docker-compose.yml ou un .gitlab-ci.yml en inspectant les clés présentes dans le yaml. L'utilisateur n'a pas besoin de spécifier le type: la commande scan-file accepte n'importe quel nom de fichier. \\
+
+La logique de détection est la suivante :
+
+\begin{lstlisting}[language=python, caption=Logique de détection]
+    if "services" in content:
+    return "docker-compose"
+if "stages" in content or any(
+    isinstance(v, dict) and "script" in v
+    for v in content.values()
+    if isinstance(v, dict)
+):
+    return "gitlab-ci"
+\end{lstlisting}
+La présence de la clé services est caractéristique d'un docker-compose.yml. Pour le GitLab CI, on vérifie la présence de stages (déclaration explicite des stages) ou la présence de jobs contenant une clé script (structure minimale d'un job GitLab CI). Si aucune de ces conditions n'est satisfaite, la fonction retourne "unknown" et extract\_images lève une exception. \\
+
+\subsubsection{Extraction docker-compose (extract\_images\_docker\_compose)}
+Parcourt la section services du fichier et extrait le champ image de chaque service. Retourne une liste de dictionnaires \{image, source\} où source indique le nom du service d'origine (ex: service:web). Cette information permet de tracer quelle image provient de quel service dans le rapport final. \\
+
+Seuls les services ayant un champ image explicite sont inclus: les services construits localement via build: sont ignorés car ils ne font pas référence à une image de registre externe. \\
+
+Exemple de résultat pour un docker-compose avec deux services : \\
+\begin{lstlisting}[language=bash, caption=Logique de détection]
+[
+    {"image": "nginx:latest",      "source": "service:web"},
+    {"image": "fake-miner:latest", "source": "service:miner"}
+]
+\end{lstlisting}
+\subsubsection{Extraction gitlab-ci (extract\_images\_gitlab\_ci)}
+Extrait les images à deux niveaux : l'image globale définie à la racine du fichier (utilisée par défaut par tous les jobs) et les images définies individuellement par job. Les deux niveaux sont indépendants:  un job peut surcharger l'image globale avec sa propre image. \\
+
+La fonction gère les deux formats supportés par GitLab CI pour la déclaration d'une image : \\
+
+\begin{lstlisting}[language=go, caption=Information d'extraction]
+# Format string simple
+image: nginx:latest
+
+# Format dictionnaire
+image:
+  name: nginx:latest
+  entrypoint: [""]
+
+\end{lstlisting}
+Dans le second cas, img.get("name") extrait le nom de l'image depuis le dictionnaire. La logique img if isinstance(img, str) else img.get("name") gère les deux cas en une seule ligne.
+\newline
+Exemple de résultat pour un .gitlab-ci.yml avec image globale et deux jobs :
+\begin{lstlisting}[language=bash, caption=Logique de détection]
+[
+    {"image": "nginx:latest",      "source": "global"},
+    {"image": "nginx:latest",      "source": "job:build-job"},
+    {"image": "fake-miner:latest", "source": "job:test-job"}
+]
+\end{lstlisting}
+\subsubsection{Point d'entrée (extract\_images)}
+\begin{lstlisting}[language=python, caption=Point d'entrée de l'extraction]
+    def extract_images(filepath: str) -> list:
+\end{lstlisting}
+Fonction principale appelée par main.py. Elle valide d'abord l'existence du fichier, puis délègue à detect\_file\_type et à la fonction d'extraction appropriée. Lève une \texttt{FileNotFoundError} si le fichier est introuvable et une ValueError si le type de fichier n'est pas reconnu: ces exceptions sont interceptées dans main.py pour afficher un message d'erreur propre à l'utilisateur. \\
+\subsection{Module static.py}
+L'analyse statique est composée de 2 phases. La première phase est de lire les différentes couches de l'image de conteneur et la deuxième phase à dresser la liste des fichiers présents dans un conteneur généré à partir de l'image suspecte.
+
+\subsubsection{collect\_static\_metrics}
+Cette fonction est le point d'entrée du module. Elle appelle les fonctions \texttt{ioc\_rules\_reader} pour obtenir un dictionnaire des indicateurs de compromission et \texttt{search\_through\_images\_files} pour débuter l'analyse. Elle retourne un object IOC\_Static créé par la fonction \texttt{search\_through\_images\_files}. Elle crée aussi un objet DockerClient qui sera envoyé à cette fonction.
+
+\begin{lstlisting}[language=bash, caption=collect\_static\_metric]
+def collect_static_metrics(image_name: str,  flag_deep_search=False):
+    rules_yaml = ioc_rules_reader()
+    docker_client = docker.from_env()
+    results = search_through_image_files(docker_client,
+                         rules_yaml, image_name, False)
+
+    return results
+\end{lstlisting}
+\subsubsection{ioc\_rules\_reader}
+\begin{lstlisting}[language=bash, caption=ioc\_rules\_reader]
+def ioc_rules_reader() -> dict:
+    print("Lecture du fichier de regles")
+    current_dir = os.getcwd()
+    filepath = ""
+    if (os.path.exists(os.path.join(current_dir,
+                      "config/ioc_rules.yaml"))):
+        filepath = os.path.join(current_dir, 
+                        'config/ioc_rules.yaml')
+    else:
+        parent_dir = os.path.dirname(current_dir)
+        filepath = os.path.join(parent_dir, 
+                    'config/ioc_rules.yaml')
+    
+    rules_yaml = {}
+    try:
+        with open(filepath, "r") as stream:
+            rules_yaml = yaml.safe_load(stream)
+        #print(rules\_yaml)
+    except FileNotFoundError:
+        print("Fichier de regle introuvable")
+    
+    print("Lecture du fichier de regles termine")
+    return rules_yaml
+\end{lstlisting}
+
+Le module commence par lire les règles IoC du fichier ioc\_rules.yaml et retourne un dictionnaire.
+
+\subsubsection{search\_through\_image\_files}
+\begin{lstlisting}[language=bash, caption=search\_through\_image\_files]
+def search_through_image_files(docker_client: DockerClient,
+     rules_yaml: dict, image_name: str, deep_search: bool):
+\end{lstlisting}
+
+Les règles utiles lors de cette phase seront celles correspondant à des commandes bash telles que \texttt{sh}, \texttt{curl}, et \texttt{wget} et à des noms de binaires associés au minage de cryptomonnaie telle que \texttt{xmrig} et \texttt{minerd}. Ces mots clés indiqueront si, lors de la construction de l'image, le créateur a inséré un mineur de crypto-monnaie.
+
+\begin{lstlisting}[language=bash]
+ioc_rules_binaire = rules_yaml["rules"]["ioc-binaire"]["indicateur"]
+ioc_rules_url = rules_yaml["rules"]["ioc-url"]["indicateur"]
+ioc_rules_dockerfile = rules_yaml["rules"]["ioc-dockerfile"]["regex_patterns"]
+ioc_rules_dockerfile_compile = {}
+suspect_commands = {}
+for ioc in ioc_rules_binaire:
+    suspect_commands[ioc] = []
+for ioc in ioc_rules_url:
+    suspect_commands[ioc] = []
+for ioc in ioc_rules_dockerfile:
+    ioc_rules_dockerfile_compile[ioc] = re.compile(ioc)
+    suspect_commands[ioc] = []
+\end{lstlisting}
+
+La phase d'analyse des couches de l'image consiste à déterminer si chacune des couches contient correspondant à des commandes exécutant du code ou téléchargeant des fichiers binaires suspects vers une source. Dans la librairie python Docker Api, la classe \texttt{Image} a une fonction nommée \texttt{history()} qui retourne sous forme de liste de dictionnaires dont chacun d'entre ces dictionnaires correspond à une couche de l'image. Après extraire le champ \texttt{CreatedBy} de chacun des dictionnaires, les commandes ayant créé la couche apparaissent. L'outil analyse ensuite chacun des groupes de commande pour vérifier si les indicateurs sont présents. Ensuite, l'outil détermine les fichiers créés dans le conteneur pour la prochaine phase.
+
+\begin{lstlisting}[language=bash]
+image_ref = docker_client.images.get(image_name)
+list_history = image_ref.history()
+    
+#Search through for command like curl, wget, sh and so on
+for layer in list_history:
+    for ioc in ioc_rules_url:
+        if (ioc in layer['CreatedBy']):
+            suspect_commands[ioc].append(layer['CreatedBy']) 
+    for ioc in ioc_rules_binaire:
+        if (ioc in layer['CreatedBy']):
+            suspect_commands[ioc].append(layer['CreatedBy']) 
+    for ioc in ioc_rules_dockerfile:
+        if (ioc_rules_dockerfile_compile[ioc].
+                        search(layer['CreatedBy']) != None):
+            suspect_commands[ioc].append(layer['CreatedBy'])
+
+crossreferenced_commands = []
+for ioc_url in ioc_rules_url:
+    for sus_url_command in suspect_commands[ioc_url]:
+        for ioc_bin in ioc_rules_binaire:
+             if (any(xmrig_command == sus_url_command for 
+             xmrig_command in suspect_commands[ioc_bin])):
+                crossreferenced_commands.append(sus_url_command)
+\end{lstlisting}
+
+La phase d'analyse du système de fichier du conteneur consiste à valider la présence des fichiers suspects que la première phase a trouvé. Docker permet de créer des conteneurs sans les démarrer, empêchant l'image d'enclencher les binaires malicieux. Ensuite, l'outil roule la commande \texttt{export} de Docker pour exporter le système de fichiers du conteneur dans un fichier d'archive, puis la commande \texttt{tar -t > fichier.txt} pour obtenir la liste de tous les fichiers dans le conteneur dans un document texte. L'outil termine en confirmant la présence des fichiers trouvés lors de la phase précédente. À la fin, le conteneur de l'image est détruit.
+
+\begin{lstlisting}[language=bash]
+sus_container = docker_client.containers.create(image_name,
+                detach=True, network="cryptojack-timeout")
+container_name = image_name.replace("/", "_")
+os.system(f"docker export {sus_container.name} | tar -t  >
+                      {container_name}_list_of_files.txt")
+
+sus_files_created_in_sus_container = []
+try:
+     for command in crossreferenced_commands:
+        splited_command = command.split(" ")
+        for argument in splited_command:
+           if "/etc/" in argument:
+                with open(f"{container_name}_list_of_files.txt", "r") as file:
+                    for line in file:
+                        if (argument[1:] == line.strip()):
+                            if (argument not in sus_files_created_in_sus_container):
+                                sus_files_created_in_sus_container.append(argument)
+except FileNotFoundError:
+    print(f"Bruh, how does {container_name}_list_of_files.txt does not exist!")
+\end{lstlisting}
+
+\subsection{Module report.py et interface.py}
+\subsubsection{report.py}
+Ce script python contient la fonction convert\_to\_json qui utilise les données sous forme de classe de interface.py pour les convertir en fichier JSON, utilisable pour des logs et l'affichage d'informations. Une fonction write\_json est fournie pour donner la possibilité de diriger où sera situé le fichier JSON créé.
+
+\subsubsection{interface.py}
+Le fichier interface.py contient 2 classes représentant les données générées par l'analyse statique (IOC\_Static) et l'analyse dynamique (IOC\_Dynamic). 
+
+\begin{lstlisting}[language=bash, caption=interface.py]
+class IOC_Static:
+    image_name: str = ""
+    xmrig_detected: bool = False
+    minerd_detected: bool = False
+    kminer_detected: bool = False
+    sh_detected: bool = False
+    sh_samples: int = 0
+    curl_detected: bool = False
+    curl_samples: int = 0
+    wget_detected: bool = False
+    wget_samples: int = 0
+    higher_permission_detected: bool = False
+    malicious_urls: list = field(default_factory=list)
+    malicious_files: list = field(default_factory=list)
+    malicious_pool: list = field(default_factory=list)
+    malicious_stratum: list = field(default_factory=list)
+
+
+class IOC_Dynamic:
+    image_name: str = ""
+    runtime_sec: int = 0
+    cpu_samples: int = 0
+    mem_samples: int = 0
+    cpu_avg: float = 0.0
+    cpu_max: float = 0.0
+    mem_avg: float = 0.0
+    mem_max: float = 0.0
+    list_process: list = field(default_factory=list)
+    connections: list = field(default_factory=list)
+    ioc_hits: list = field(default_factory=list)
+    logs: list = field(default_factory=list)
+\end{lstlisting}
+
+Les données statiques comprennent le nom de l'image et différents indices de système compromis qui peut être détecté comme xmrig\_detected qui indique si un texte contient du xmrig. Les données d'analyse dynamique contiennent des données similaires en lien avec les indices de système compromis en plus du temps de d'exécution de l'image.
+
+\subsection{Fichiers de test}
+\subsubsection{fake-miner: Image malveillante simulée}
+L'image \texttt{fake-miner} simule les comportements caractéristiques d'un cryptomineur sans utiliser de vrai malware. Elle a été conçue pour déclencher les IoC suivants :
+
+textbf{Indicateurs dynamique: }
+\begin{itemize}
+    \item CPU soutenu à 100\% via \texttt{dd if=/dev/urandom} et calcul Python intensif
+    \item Processus \texttt{kworker}: nom obfusqué imitant un processus kernel Linux légitime
+    \item Processus \texttt{python3 /gpu\_sim.py} simulant une charge GPU via calcul mathématique intensif
+    \item Tentatives de connexion vers les ports 3333 et 4444 via \texttt{netcat}
+    \item Tentative de téléchargement via \texttt{curl} vers un pool de minage connu
+\end{itemize}
+
+textbf{Indicateurs statiques: }
+\begin{itemize}
+    \item URL de pool de minage \texttt{stratum+tcp://pool.minexmr.com:4444} dans les scripts
+    \item Variable d'environnement \texttt{POOL\_URL} exposant la configuration du mineur
+    \item Variable d'environnement \texttt{WALLET\_ADDRESS} avec une adresse crypto
+\end{itemize}
+
+Le choix du nom \texttt{kworker} est délibéré : il illustre la technique d'obfuscation par imitation de processus système. Sans la règle \texttt{kworker} dans \texttt{ioc\_rules.yaml}, le binaire ne serait détecté que par son comportement CPU, démontrant la valeur de l'approche combinée.
+
+\subsubsection{docker-compose.yml de test}
+\begin{lstlisting}[language=bash, caption=docker-compose de test]
+services:
+  web:
+    image: nginx:latest
+  miner:
+    image: fake-miner:latest
+\end{lstlisting}
+
+Ce fichier permet de tester la commande \texttt{scan-file} avec deux images aux comportements opposés : une image légitime (nginx) et une image malveillante (fake-miner). L'analyse en parallèle permet de vérifier que les métriques ne se mélangent pas entre les deux conteneurs.
+
+\subsubsection{.gitlab-ci.yml de test}
+\begin{lstlisting}[language=bash, caption=gitlab ci de test]
+stages:
+  - build
+  - test
+
+image: nginx:latest
+
+build-job:
+  stage: build
+  image: nginx:latest
+  script:
+    - echo "Build stage"
+
+test-job:
+  stage: test
+  image: fake-miner:latest
+  script:
+    - echo "Test stage"
+\end{lstlisting}
+
+Ce fichier teste l'extraction d'images depuis un fichier GitLab CI avec une image globale et des images par job. Il permet de valider que le parser gère correctement les deux niveaux de déclaration d'images.
+
+\subsection{Intégration dans un pipeline CI/CD}
+L'outil est conçu pour s'intégrer comme première étape de validation dans un pipeline CI/CD, avant le déploiement des conteneurs en production. L'objectif est de détecter les images malveillantes le plus tôt possible dans le cycle de développement, avant qu'elles n'atteignent un environnement de production.
+
+\subsubsection{Workflow typique}
+\begin{lstlisting}[language=bash, caption=Exemple workflow intégration CI/CD]
+[Push du code]
+    → [setup: configuration de l'environnement isolé]
+    → [scan-file: extraction des images depuis docker-compose / gitlab-ci]
+    → [analyze: analyse dynamique de chaque image]
+    → [analyze: analyse statique de chaque image]
+    → [scoring: corrélation des IoC statiques et dynamiques]  (à venir)
+    → [Rapport JSON généré pour chaque image]
+    → [Décision : déployer ou bloquer selon le score]
+\end{lstlisting}
+
+\subsubsection{Prérequis pour l'intégration}
+Pour intégrer l'outil dans un pipeline, le runner CI/CD doit satisfaire les conditions suivantes :
+\begin{itemize}
+    \item Docker installé et accessible depuis le runner.
+    \item Python 3.10+ avec les dépendances installées (pip install -r requirements.txt).
+    \item Permissions suffisantes pour créer des réseaux Docker et lancer des conteneurs
+    \item Le réseau cryptojack-timeout créé via python 'main.py setup' avant la première exécution.
+\end{itemize}
+
+\subsubsection{Exemple d'intégration GitLab CI}
+\begin{lstlisting}[language=bash, caption=Exemple intégration gitlab CI]
+stages:
+  - build
+  - security
+  - deploy
+
+security-scan:
+  stage: security
+  before_script:
+    - pip install -r requirements.txt
+    - python main.py setup
+  script:
+    # Analyser toutes les images déclarées dans le docker-compose
+    - python main.py scan-file --file docker-compose.yml 
+    --duration 60 --output ./security-reports
+    # Optionnel : analyser une image spécifique
+    # - python main.py analyze --image mon-image:latest --duration 60
+  after_script:
+    # Nettoyage des images analysées
+    - python main.py cleanup --image mon-image:latest || true
+  artifacts:
+    paths:
+      - security-reports/
+    expire_in: 7 days
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+    - if: $CI_COMMIT_BRANCH == "main"
+\end{lstlisting}
+
+Le stage \texttt{security} est placé après \texttt{build} et avant \texttt{deploy}: si l'analyse détecte des IoC, le pipeline peut être configuré pour bloquer le déploiement. Les rapports JSON sont archivés comme artefacts GitLab pour consultation ultérieure.
+
+\subsubsection{Exemple d'intégration GitHub Actions}
+\begin{lstlisting}[language=bash, caption=Exemple intégration GitHub Actions]
+name: Security Scan
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  security-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Setup isolated network
+        run: python main.py setup
+
+      - name: Scan images
+        run: |
+          python main.py scan-file \
+            --file docker-compose.yml \
+            --duration 60 \
+            --output ./security-reports
+
+      - name: Upload reports
+        uses: actions/upload-artifact@v3
+        with:
+          name: security-reports
+          path: security-reports/
+          retention-days: 7
+
+      - name: Cleanup
+        if: always()
+        run: python main.py cleanup --image mon-image:latest || true
+\end{lstlisting}
+
+\subsubsection{Avantages de l'approche par fichier yaml}
+La commande \texttt{scan-file} est la clé de l'intégration CI/CD pour deux raisons principales. \\
+
+Premièrement, elle ne requiert aucune modification du pipeline existant: elle lit les fichiers de configuration déjà présents dans le projet (docker-compose.yml, .gitlab-ci.yml) sans que l'équipe ait à lister manuellement les images à analyser. Toute nouvelle image ajoutée dans ces fichiers sera automatiquement incluse dans l'analyse. \\
+
+Deuxièmement, l'analyse en parallèle des images réduit le temps total d'exécution proportionnellement au nombre d'images. Un projet avec 4 images prend autant de temps qu'un projet avec 1 image, ce qui est important dans un contexte de pipeline où chaque minute compte.
+
+\subsubsection{Limites dans un contexte CI/CD}
+\textbf{Durée d'observation: } Une durée de 60 secondes est recommandée en production pour donner le temps aux comportements malveillants de se manifester. Des durées plus courtes (15-30s) conviennent pour les tests rapides mais peuvent manquer des malwares à démarrage différé. \\
+
+\textbf{Runner dédié: } Il est fortement recommandé d'utiliser un runner CI/CD dédié exclusivement à l'analyse de sécurité, distinct du runner de build. Un malware qui s'échappe du conteneur ne devrait pas atteindre l'environnement de build. \\
+
+\textbf{Pas de blocage automatique: } Dans l'état actuel du prototype, l'outil génère un rapport JSON mais ne bloque pas automatiquement le pipeline selon le score. L'intégration d'un mécanisme de décision automatique (exit code non-zéro si IoC détectés) est une perspective d'amélioration.
+
+\subsection{Résultats du projet académique}
+\subsubsection{Résultats de l'analyse dynamique}
+\begin{lstlisting}[language=bash, caption=Rapport JSON fake-miner\_latest\_dynamic.json]
+    {
+    "analysis_type": "Dynamic",
+    "image_name": "fake-miner:latest",
+    "runtime_sec": 15,
+    "cpu_samples": 5,
+    "mem_samples": 5,
+    "cpu_avg": 100.0,
+    "cpu_max": 100.0,
+    "mem_avg": 23.28,
+    "mem_max": 24.29,
+    "list_process": [
+        "/bin/sh /usr/bin/kworker",
+        "python3 /gpu_sim.py",
+        "/bin/sh /entrypoint.sh",
+        "dd if /dev/urandom of /dev/null bs 1M count 100"
+    ],
+    "connections": [
+        "eth0: rx=2944B tx=358B"
+    ],
+    "ioc_hits": [
+        "[ioc-cpu] CPU max \u00e0 100.00% d\u00e9passe le seuil de 70%",
+        "[ioc-binaire] Processus suspects: ['kworker']"
+    ],
+    "logs": [
+        "100+0 records in",
+        "100+0 records out",
+        "100+0 records in",
+        "100+0 records out",
+        "104857600 bytes (100.0MB) copied, 0.633591 seconds, 157.8MB/s",
+        "104857600 bytes (100.0MB) copied, 0.639159 seconds, 156.5MB/s",
+        "100+0 records in",
+        "100+0 records out",
+        "100+0 records in",
+        "100+0 records out",
+        "104857600 bytes (100.0MB) copied, 0.773503 seconds, 129.3MB/s",
+        "104857600 bytes (100.0MB) copied, 0.747246 seconds, 133.8MB/s",
+        "100+0 records in",
+        "100+0 records out",
+        "100+0 records in",
+        "100+0 records out",
+        "104857600 bytes (100.0MB) copied, 0.681567 seconds, 146.7MB/s",
+        "104857600 bytes (100.0MB) copied, 0.660994 seconds, 151.3MB/s",
+        "100+0 records in",
+        "100+0 records out",
+        "104857600 bytes (100.0MB) copied, 0.643130 seconds, 155.5MB/s",
+        "100+0 records in",
+        "100+0 records out",
+        "104857600 bytes (100.0MB) copied, 0.731574 seconds, 136.7MB/s",
+        "100+0 records in",
+        "100+0 records out",
+        "104857600 bytes (100.0MB) copied, 0.683900 seconds, 146.2MB/s",
+        "100+0 records in",
+        "100+0 records out",
+        "104857600 bytes (100.0MB) copied, 0.724018 seconds, 138.1MB/s",
+        "100+0 records in",
+       …
+      ]
+}
+\end{lstlisting}
+
+\begin{lstlisting}[language=bash, caption=Retour CLI fake-miner:latest]
+==================================================
+  Analyse de l'image : fake-miner:latest
+  Durée             : 15s
+  Intervalle        : 2s
+==================================================
+
+ [*] Vérification de l'image fake-miner:latest...
+ [*] Image trouvée localement, pas de pull nécessaire.
+ [*] Lancement du conteneur...
+ [*] Collecte des métriques pendant 15 secondes...
+   CPU: 100.00%  MEM: 23.64 MB  PROC: ['/bin/sh /entrypoint.sh', 
+   '/bin/sh /usr/bin/kworker', 'python3 /gpu_sim.py', 
+   '/bin/sh /usr/bin/kworker', 
+   'dd if /dev/urandom of /dev/null bs 1M count 100', 
+   'dd if /dev/urandom of /dev/null bs 1M count 100'] 
+    NET: ['eth0: rx=836B tx=274B']
+   CPU: 100.00%  MEM: 23.98 MB  PROC: ['/bin/sh /entrypoint.sh',
+    '/bin/sh /usr/bin/kworker', 'python3 /gpu_sim.py', 
+    '/bin/sh /usr/bin/kworker', 
+    'dd if /dev/urandom of /dev/null bs 1M count 100', 
+    'dd if /dev/urandom of /dev/null bs 1M count 100']  
+    NET: ['eth0: rx=2411B tx=316B']
+   CPU: 100.00%  MEM: 23.97 MB  PROC: ['/bin/sh /entrypoint.sh', 
+   '/bin/sh /usr/bin/kworker', 'python3 /gpu_sim.py', 
+   '/bin/sh /usr/bin/kworker', 
+   'dd if /dev/urandom of /dev/null bs 1M count 100',
+    'dd if /dev/urandom of /dev/null bs 1M count 100']  
+    NET: ['eth0: rx=2837B tx=358B']
+   CPU: 100.00%  MEM: 23.84 MB  PROC: ['/bin/sh /entrypoint.sh', 
+   '/bin/sh /usr/bin/kworker', 'python3 /gpu_sim.py', 
+   '/bin/sh /usr/bin/kworker', 
+   'dd if /dev/urandom of /dev/null bs 1M count 100', 
+   'dd if /dev/urandom of /dev/null bs 1M count 100']  
+   NET: ['eth0: rx=2944B tx=358B']
+   CPU: 100.00%  MEM: 23.13 MB  PROC: ['/bin/sh /entrypoint.sh', 
+   '/bin/sh /usr/bin/kworker', 'python3 /gpu_sim.py', 
+   '/bin/sh /usr/bin/kworker', 
+   'dd if /dev/urandom of /dev/null bs 1M count 100', 
+   'dd if /dev/urandom of /dev/null bs 1M count 100'] 
+    NET: ['eth0: rx=2944B tx=358B']
+ [*] Arrêt du conteneur...
+ [*] Suppression du conteneur...
+Resulats Analyse dymamique
+==================================================
+  CPU moyen : 100.0%
+  CPU max   : 100.0%
+  MEM moy   : 23.71 MB
+  MEM max   : 23.98 MB
+  Processus : ['/bin/sh /usr/bin/kworker', '/bin/sh /entrypoint.sh',
+   'dd if /dev/urandom of /dev/null bs 1M count 100', 'python3 /gpu_sim.py']
+  Connexions: ['eth0: rx=2944B tx=358B']
+  IoC hits  : ['[ioc-cpu] CPU max à 100.00% dépasse le seuil de 70%', 
+                   "[ioc-binaire] Processus suspects: ['kworker']"]
+  Logs suspects: ['100+0 records in', '100+0 records out', 
+  '104857600 bytes (100.0MB) copied, 0.594339 seconds, 168.3MB/s',
+                          '100+0 records in', '100+0 records out']
+==================================================
+
+[*] Rapport JSON genere pour l'analyse dynamique : 
+           ./output/fake-miner_latest_dynamic.json
+\end{lstlisting}
+
+\begin{lstlisting}[language=bash, caption=Rapport JSON nginx\_latest\_dynamic.json]
+{
+    "analysis_type": "Dynamic",
+    "image_name": "nginx:latest",
+    "runtime_sec": 15,
+    "cpu_samples": 5,
+    "mem_samples": 5,
+    "cpu_avg": 0.92,
+    "cpu_max": 4.58,
+    "mem_avg": 2.65,
+    "mem_max": 2.65,
+    "list_process": [
+        "nginx: worker process",
+        "nginx: master process nginx -g daemon off;"
+    ],
+    "connections": [
+        "eth0: rx=2822B tx=126B"
+    ],
+    "ioc_hits": [],
+    "logs": [
+        "/docker-entrypoint.sh: /docker-entrypoint.d/ is not empty,
+                           will attempt to perform configuration",
+        "/docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/",
+        "/docker-entrypoint.sh: Launching /docker-entrypoint.d/
+                             10-listen-on-ipv6-by-default.sh",
+        "10-listen-on-ipv6-by-default.sh: info: Getting the checksum of 
+                                       /etc/nginx/conf.d/default.conf",
+        "10-listen-on-ipv6-by-default.sh: info: Enabled listen on IPv6 in 
+                                      /etc/nginx/conf.d/default.conf",
+        "/docker-entrypoint.sh: Sourcing /docker-entrypoint.d/
+                                    15-local-resolvers.envsh",
+        "/docker-entrypoint.sh: Launching /docker-entrypoint.d/
+                                 20-envsubst-on-templates.sh",
+        "/docker-entrypoint.sh: Launching /docker-entrypoint.d/
+                                 30-tune-worker-processes.sh",
+        "/docker-entrypoint.sh: Configuration complete; ready for start up",
+        "2026/03/30 19:01:03 [notice] 1#1: using the \"epoll\" event method",
+        "2026/03/30 19:01:03 [notice] 1#1: nginx/1.29.6",
+        "2026/03/30 19:01:03 [notice] 1#1: built by gcc 14.2.0 (Debian 14.2.0-19) ",
+        "2026/03/30 19:01:03 [notice] 1#1: OS: Linux 6.12.73+deb13-amd64",
+        "2026/03/30 19:01:03 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1024:524288",
+        "2026/03/30 19:01:03 [notice] 1#1: start worker processes",
+        "2026/03/30 19:01:03 [notice] 1#1: start worker process 29",
+        "2026/03/30 19:01:18 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down",
+        "2026/03/30 19:01:18 [notice] 29#29: gracefully shutting down",
+        "2026/03/30 19:01:18 [notice] 29#29: exiting",
+        "2026/03/30 19:01:18 [notice] 29#29: exit",
+        "2026/03/30 19:01:18 [notice] 1#1: signal 17 (SIGCHLD) received from 29",
+        "2026/03/30 19:01:18 [notice] 1#1: worker process 29 exited with code 0",
+        "2026/03/30 19:01:18 [notice] 1#1: exit"
+    ]
+}
+\end{lstlisting}
+
+\begin{lstlisting}[language=bash, caption=Retour CLI nginx:latest]
+==================================================
+  Analyse de l'image : nginx:latest
+  Durée             : 15s
+  Intervalle        : 2s
+==================================================
+
+ [*] Vérification de l'image nginx:latest...
+ [*] Image trouvée localement, pas de pull nécessaire.
+ [*] Lancement du conteneur...
+ [*] Collecte des métriques pendant 15 secondes...
+   CPU: 16.45%  MEM: 7.62 MB  PROC: ['nginx: master process nginx -g daemon off;',
+                           'nginx: worker process']  NET: ['eth0: rx=526B tx=84B']
+   CPU: 0.00%  MEM: 7.61 MB  PROC: ['nginx: master process nginx -g daemon off;', 
+                         'nginx: worker process']  NET: ['eth0: rx=2261B tx=126B']
+   CPU: 0.00%  MEM: 7.61 MB  PROC: ['nginx: master process nginx -g daemon off;',
+                         'nginx: worker process']  NET: ['eth0: rx=2645B tx=126B']
+   CPU: 0.00%  MEM: 7.61 MB  PROC: ['nginx: master process nginx -g daemon off;',
+                         'nginx: worker process']  NET: ['eth0: rx=2752B tx=126B']
+   CPU: 0.00%  MEM: 7.61 MB  PROC: ['nginx: master process nginx -g daemon off;',
+                         'nginx: worker process']  NET: ['eth0: rx=2822B tx=126B']
+ [*] Arrêt du conteneur...
+ [*] Suppression du conteneur...
+Resulats Analyse dymamique
+==================================================
+  CPU moyen : 3.29%
+  CPU max   : 16.45%
+  MEM moy   : 7.61 MB
+  MEM max   : 7.62 MB
+  Processus : ['nginx: master process nginx -g daemon off;', 'nginx: worker process']
+  Connexions: ['eth0: rx=2822B tx=126B']
+  IoC hits  : Aucun
+  Logs suspects: ['/docker-entrypoint.sh: /docker-entrypoint.d/ is not empty,
+   will attempt to perform configuration', '/docker-entrypoint.sh: 
+   Looking for shell scripts in /docker-entrypoint.d/', 
+   '/docker-entrypoint.sh: Launching 
+   /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh',
+    '10-listen-on-ipv6-by-default.sh: info: Getting the checksum of 
+    /etc/nginx/conf.d/default.conf', 
+    '10-listen-on-ipv6-by-default.sh: 
+    info: Enabled listen on IPv6 in /etc/nginx/conf.d/default.conf']
+==================================================
+
+[*] Rapport JSON genere pour l'analyse dynamique : ./output/nginx_latest_dynamic.json
+\end{lstlisting}
+
+\paragraph{Méthodologie d'évaluation}
+\noindent Les tests ont été conduits sur deux images représentant des cas opposés : \texttt{nginx:latest} comme image de référence légitime et \texttt{fake-miner:latest} comme image malveillante simulée. Chaque analyse a été exécutée avec une durée d'observation de 15 secondes et un intervalle de collecte de 2 secondes, produisant 5 échantillons par métrique. \\
+
+\noindent L'environnement d'exécution est une VM VirtualBox dédiée avec le réseau Docker isolé \texttt{cryptojack-timeout} configuré avec l'option \texttt{--internal} bloquant tout accès internet depuis les conteneurs.
+\paragraph{Résultats comparatifs}
+\begin{table}[H]
+    \centering
+    \begin{tabularx}{\textwidth}{|l|l|X|}
+        \hline
+        \textbf{Métrique} & \textbf{nginx:latest} & \textbf{fake-miner:latest} \\
+        \hline
+        CPU moyen & 3.29\% & 100.00\% \\
+        \hline
+        CPU max & 16.45\% & 100.00\% \\
+        \hline
+        Mémoire moyenne & 7.61MB & 23.71MB \\
+        \hline
+        Mémoire max & 7.62MB & 23.98MB \\
+        \hline
+        Nombre de processus & 2 & 4 \\
+        \hline
+        IoC hits & 0 & 2 \\
+        \hline
+        Verdict & Légitime & Malveillant \\
+        \hline
+    \end{tabularx}
+    \caption{Résultats nginx et fake-miner}
+\end{table}
+\noindent \paragraph{Analyse de l'image légitime  - nginx:latest}: \newline
+\noindent L'analyse de \texttt{nginx:latest} produit un profil comportemental cohérent avec une image de serveur web en attente de requêtes. Le CPU présente un pic initial de 16.45\% correspondant à la phase d'initialisation du serveur, suivi d'une utilisation nulle pendant les 4 mesures suivantes, reflétant un conteneur idle sans requêtes entrantes. La mémoire reste stable à 7.61 MB sur toute la durée d'observation. \\
+
+\noindent Deux processus sont actifs : le processus maître nginx et un worker process, ce qui correspond exactement à la configuration par défaut de nginx. Les connexions réseau montrent un trafic entrant modeste (2 822 B reçus) correspondant aux health checks Docker, et un trafic sortant minimal (126 B), sans aucune connexion vers des ports suspects. L'analyse ne produit aucun IoC hit, confirmant que l'image est correctement classifiée comme légitime. \\
+
+\noindent Les logs capturés reflètent uniquement le cycle d'initialisation normal de nginx, avec les scripts de configuration de l'entrypoint officiels.
+\noindent \paragraph{Analyse de l'image malveillante simulée  - fake-miner:latest}: \newline
+\noindent L'analyse de \texttt{fake-miner:latest} révèle un profil comportemental caractéristique d'une activité de cryptomining. Le CPU atteint et maintient 100\% à chaque mesure sur l'ensemble des 15 secondes d'observation, sans aucune variation — ce comportement soutenu et constant est l'un des indicateurs les plus fiables d'un processus de minage actif. \\
+
+\noindent Quatre processus distincts sont identifiés lors de l'exécution. Le processus \texttt{/bin/sh /entrypoint.sh} est le script d'orchestration principal. Le processus \texttt{/bin/sh /usr/bin/kworker}, présent en deux instances simultanées, est le faux mineur dont le nom imite délibérément un processus kernel Linux légitime (\texttt{kworker}) pour passer inaperçu. Le processus \texttt{python3 /gpu\_sim.py} simule une charge GPU via des calculs mathématiques intensifs. Enfin, \texttt{dd if=/dev/urandom} génère une charge CPU soutenue via des opérations d'entrée/sortie en boucle, visible dans les logs sous forme de lignes répétitives \texttt{104857600 bytes (100.0MB) copied}. \\
+
+\noindent La mémoire s'établit à 23.71 MB en moyenne, soit environ trois fois plus que nginx, reflétant l'empreinte mémoire des processus de calcul concurrents. \\
+
+\noindent L'analyse produit deux IoC hits distincts. Le premier, \texttt{[ioc-cpu]}, est déclenché par le CPU max à 100\% dépassant le seuil configuré de 70\%. Le second, \texttt{[ioc-binaire]}, est déclenché par la détection du binaire kworker dans la liste des processus actifs: binaire répertorié dans \texttt{ioc\_rules.yaml} comme indicateur de cryptomining. \\
+\noindent \paragraph{Limites observées}: \newline
+\noindent \textbf{Durée d'observation :} Une fenêtre de 15 secondes est suffisante pour détecter \texttt{fake-miner} en raison de son comportement immédiat et soutenu. Un malware sophistiqué pourrait implémenter un délai d'activation ou détecter l'environnement d'analyse et rester dormant, nécessitant des durées d'observation plus longues pour être détecté.
+
+\noindent \textbf{Réseau isolé et tentatives bloquées :} Le réseau \texttt{--internal} bloque les connexions sortantes, empêchant le mineur de contacter un pool de minage réel. Les tentatives de connexion vers les ports 3333 et 4444 via \texttt{netcat} ne laissent pas de traces exploitables dans les logs du conteneur, réduisant la valeur de l'indicateur \texttt{ioc-persistent-connection} dans ce contexte. \\
+
+\noindent \textbf{Échantillon de test limité :} Échantillon de test limité. Les résultats reposent sur deux images : une légitime et une malveillante simulée. Une évaluation plus rigoureuse nécessiterait un corpus plus large incluant des images aux comportements variés: images légitimes à forte consommation CPU, images malveillantes obfusquées à démarrage différé, pour mesurer les taux de faux positifs et de faux négatifs de manière statistiquement significative.
+
+\subsubsection{Résultats de l'analyse statique}
+
+\begin{lstlisting}[language=bash, caption=Retour rapport nginx:latest]
+{
+   "analysis_type": "Static",
+   "image_name": "nginx:latest",
+   "xmrig_detected": false,
+   "kminer_detected": false,
+   "sh_detected": true,
+   "sh_samples": 8,
+   "curl_detected": true,
+   "curl_samples": 1,
+   "wget_detected": false,
+   "wget_samples": 0,
+   "higher_permission_detected": false,
+   "malicious_urls": [],
+   "malicious_files": [],
+   "malicious_pool": [],
+   "malicious_stratum": []
+}
+
+\end{lstlisting}
+
+\begin{lstlisting}[language=bash, caption=Retour CLI nginx:latest]
+==================================================
+Demarrage de l'analyse statique de l'image
+[*] Lecture du fichier de regles
+[*] Lecture du fichier de regles termine
+==================================================
+
+[*] Extraction des indicateurs de compromission...
+[*] Extraction termine
+==================================================
+
+[*] Analyse des couches de l'image de conteneur...
+[*] Analyse des couches de l'images termine
+==================================================
+
+[*] Analyse du systeme de fichiers du conteneur.
+[*] Creation du conteneur...
+[*] Dressage de la liste des fichiers...
+[*] Analyse du systeme de fichiers...
+[*] Analyse du systeme de fichiers termine
+==================================================
+
+[*] Preparation des resultats...
+[*] Nettoyage du conteneur.
+Resultats de l'analyse statique:
+==================================================
+  Presence xmrig: Non
+  Presence minerd: Non
+  Presence kminer: Non
+  Nombre de commandes "sh": 8
+  Nombre de commandes "curl": 1
+  Nombre de commandes "wget": 0
+  Liens url suspects: Aucun
+  Fichiers suspects dans le conteneur: Aucun
+  Liens pool suspects: Aucun
+  Liens stratum suspects: Aucun
+==================================================
+\end{lstlisting}
+
+\begin{lstlisting}[language=bash, caption=Retour rapport fake-miner:latest]
+{
+   "analysis_type": "Static",
+   "image_name": "fake-miner:latest",
+   "xmrig_detected": false,
+   "kminer_detected": true,
+   "sh_detected": true,
+   "sh_samples": 6,
+   "curl_detected": true,
+   "curl_samples": 2,
+   "wget_detected": false,
+   "wget_samples": 0,
+   "higher_permission_detected": false,
+   "malicious_urls": [
+       "stratum+tcp://pool.minexmr.com:4444'",
+       "http://pool.minexmr.com/api"
+   ],
+   "malicious_files": [
+       "/usr/bin/kworker"
+   ],
+   "malicious_pool": [
+       "stratum+tcp://pool.minexmr.com:4444'",
+       "http://pool.minexmr.com/api",
+       "stratum+tcp://pool.minexmr.com:4444'",
+       "POOL_URL=stratum+tcp://pool.minexmr.com:4444"
+   ],
+   "malicious_stratum": []
+}
+\end{lstlisting}
+
+\begin{lstlisting}[language=bash, caption=Retour CLI fake-miner:latest]
+==================================================
+Demarrage de l'analyse statique de l'image
+[*] Lecture du fichier de regles
+[*] Lecture du fichier de regles termine
+==================================================
+
+[*] Extraction des indicateurs de compromission...
+[*] Extraction termine
+==================================================
+
+[*] Analyse des couches de l'image de conteneur...
+[*] Analyse des couches de l'images termine
+==================================================
+
+[*] Analyse du systeme de fichiers du conteneur.
+[*] Creation du conteneur...
+[*] Dressage de la liste des fichiers...
+[*] Analyse du systeme de fichiers...
+[*] Analyse du systeme de fichiers termine
+==================================================
+
+[*] Preparation des resultats...
+[*] Nettoyage du conteneur.
+Resultats de l'analyse statique:
+==================================================
+  Presence xmrig: Non
+  Presence minerd: Non
+  Presence kminer: Oui
+  Nombre de commandes "sh": 6
+  Nombre de commandes "curl": 2
+  Nombre de commandes "wget": 0
+  Liens url suspects: ["stratum+tcp://pool.minexmr.com:4444'", 
+  'http://pool.minexmr.com/api']
+  Fichiers suspects dans le conteneur: ['/usr/bin/kworker']
+  Liens pool suspects: ["stratum+tcp://pool.minexmr.com:4444'", 
+  'http://pool.minexmr.com/api', "stratum+tcp://pool.minexmr.com:4444'",
+   'POOL_URL=stratum+tcp://pool.minexmr.com:4444']
+  Liens stratum suspects: Aucun
+==================================================
+\end{lstlisting}
+
+\begin{lstlisting}[language=bash, caption=Retour rapport 021982/xmrig:latest]
+{
+   "analysis_type": "Static",
+   "image_name": "021982/xmrig",
+   "xmrig_detected": true,
+   "kminer_detected": false,
+   "sh_detected": true,
+   "sh_samples": 10,
+   "curl_detected": false,
+   "curl_samples": 0,
+   "wget_detected": true,
+   "wget_samples": 2,
+   "higher_permission_detected": false,
+   "malicious_urls": [
+       "https://raw.githubusercontent.com/nhatquanglan/
+       daovps/master/daoxmrig_ubuntu_tor_docker.py"
+   ],
+   "malicious_files": [
+       "/etc/dao.py"
+   ],
+   "malicious_pool": [],
+   "malicious_stratum": []
+}
+\end{lstlisting}
+
+\begin{lstlisting}[language=bash, caption=Retour CLI 021982/xmrig:latest]
+==================================================
+Demarrage de l'analyse statique de l'image
+[*] Lecture du fichier de regles
+[*] Lecture du fichier de regles termine
+==================================================
+
+[*] Extraction des indicateurs de compromission...
+[*] Extraction termine
+==================================================
+
+[*] Analyse des couches de l'image de conteneur...
+[*] Analyse des couches de l'images termine
+==================================================
+
+[*] Analyse du systeme de fichiers du conteneur.
+[*] Creation du conteneur...
+[*] Dressage de la liste des fichiers...
+[*] Analyse du systeme de fichiers...
+[*] Analyse du systeme de fichiers termine
+==================================================
+
+[*] Preparation des resultats...
+[*] Nettoyage du conteneur.
+Resultats de l'analyse statique:
+==================================================
+  Presence xmrig: Oui
+  Presence minerd: Non
+  Presence kminer: Non
+  Nombre de commandes "sh": 10
+  Nombre de commandes "curl": 0
+  Nombre de commandes "wget": 2
+  Liens url suspects: ['https://raw.githubusercontent.com/
+  nhatquanglan/daovps/master/daoxmrig_ubuntu_tor_docker.py']
+  Fichiers suspects dans le conteneur: ['/etc/dao.py']
+  Liens pool suspects: Aucun
+  Liens stratum suspects: Aucun
+\end{lstlisting}
+\noindent \paragraph{Méthodologie d’évaluation}: \newline
+\noindent L’analyse statique est évaluée en le testant contre trois différentes images: l’image légitime nginx:latest, l’image malveillante créée fake-miner:latest et une image malveillante de la vie réelle 021982/xmrig. Les aspects les plus intéressants à comparer sont la détection des liens urls suspicieux pointant vers des binaires ou des scripts de cryptominage, des commandes de téléchargement telle que \texttt{curl}, des fichiers suspects générés lors de création du conteneur.
+\noindent \paragraph{Nginx}: \newline 
+\noindent L’image nginx est une image officielle offerte par Docker pour démarrer un serveur Web avec le cadriciel du même nom. Il était attendu que lors de l’analyse statique que cette image contiennent certainement des commandes \texttt{curl} ou \texttt{sh} pour mettre en place nginx, mais aussi qu’aucun lien url malicieux ou fichier suspect soit présent à l’intérieur. Finalement, cette hypothèse est confirmée, puisqu’aucun lien malicieux ni aucun fichier suspect ne sont apparus dans le rapport. Ainsi, l’outil ne génère pas de faux positifs à l’égard de nginx:latest.
+\noindent \paragraph{Fake-miner}: \newline 
+L’image fake-miner est une image qui a été créée principalement pour tester l’analyse dynamique sans compromettre la machine l’hébergeant, et cette image est aussi traitée par l’analyse statique. Le contenu de l’image étant déjà connu, contenant des faux liens vers des pools de cryptominage et un binaire obfusqué de cryptominage à l’aide de \texttt{kworker}. Après l’analyse statique, l’outil a détecté \texttt{kworker} et les liens pointant vers des pools et les a transcrits dans le rapport. 
+\noindent \paragraph{021982/xmrig}: \newline 
+\noindent L’image 021982/xmrig est une vraie image malveillante étant utilisée pour mener à des attaques de crypto jacking sur la machine de la victime. Au préalable, une analyse manuelle a été menée pour comprendre le contenu de cette image. Cette analyse manuelle consistait simplement à consulter manuellement les couches de l’image pour lire les commandes suspectes. Lors de l’analyse statique de l’outil, celui-ci a détecté un script python provenant de github contenant \texttt{xmrig} dans son nom qui a été sauvegardé en autre nom \texttt{/etc/dao.py} dans le système de fichier d’un conteneur de l’image. Ce script pouvait contenir alors les commandes continuant l’installation de crypto jacking.
+\noindent \paragraph{Limites Observées}: \newline 
+\noindent \textbf{Pas d’analyse des fichiers en profondeur:} Le manque d’analyse des fichiers en profondeur peut mener à des résultats non conclusifs sur l’état de l’image. Dans l’exemple de l’image 021982/xmrig, l’outil n’analyse pas \texttt{/etc/dao.py}, alors que ce fichier peut contenir encore plus d’informations pouvant confirmer la nature de l’image. Voir la sous section « Manque d’analyse en profondeur » des fichiers sous la section \texttt{Difficultés et limites rencontrées} pour plus d’informations. \newline
+\noindent \textbf{Pas d’analyse de binaire:} Le manque d’analyse de binaire soit par la comparaison des signatures des binaires et par la correspondance d’ensemble de bytes suspect permet à des binaires sophistiquement obfusqués d'échapper à l’analyse. \newline
+\noindent \textbf{Petit échantillon de test:} L’échantillon de test, comme mentionné dans la section d’analyse dynamique, n’est pas assez large pour être capable de détecter toutes les différentes formes de binaires, de liens url pointant vers des liens malicieux, et les liens vers des pools de crypto minage. \newline
+\subsubsection{Réponse à la problématique}
+Les résultats obtenus permettent d'apporter des éléments de réponse à la problématique posée : dans quelle mesure une approche combinant l'analyse statique et l'analyse dynamique permet-elle d'identifier de manière plus fiable des images Docker impliquées dans des activités de cryptomining malveillant, tout en limitant les faux positifs?
+
+\noindent \paragraph{Analyse dynamique}
+\noindent \textbf{Sur la détection :} L'analyse dynamique parvient à distinguer clairement les deux images testées. L'image légitime ne produit aucun IoC hit tandis que l'image malveillante en produit deux, avec des métriques CPU et mémoire significativement différentes. La combinaison de deux indicateurs indépendants:comportemental (CPU) et structurel (nom de binaire), qui renforce la fiabilité du verdict en réduisant la dépendance à un seul signal.
+
+\noindent \textbf{Sur la limitation des faux positifs :} Un faux positif a été identifié et corrigé lors du développement : le mot \texttt{sh} dans les règles \texttt{ioc-url} déclenchait incorrectement une alerte sur nginx à cause des références à des scripts \texttt{.sh} dans ses logs d'initialisation. Ce problème a été résolu par un filtre contextuel vérifiant que \texttt{sh} apparaît comme commande et non comme extension. L'absence d'IoC hits sur nginx dans les résultats finaux confirme l'efficacité de ce correctif.
+
+\noindent \textbf{Sur la technique d'obfuscation :} Le cas du binaire \texttt{kworker} illustre une limite importante de la détection par nom de binaire seule. Sans la règle \texttt{kworker} dans \texttt{ioc\_rules.yaml}, seul l'IoC CPU aurait été déclenché. Ce résultat justifie l'approche combinée : l'analyse comportementale (CPU élevé soutenu) permet de détecter des malwares dont le nom de binaire est inconnu, tandis que la liste de binaires suspects permet d'identifier des malwares à faible consommation CPU ou à démarrage différé.
+
+\subsection{Difficultés et limites rencontrées}
+\subsubsection{Pas de support GPU réel}
+Docker ne permet pas d'accéder au GPU sans configuration spécifique (\texttt{--gpus} + drivers NVIDIA). La simulation GPU de \texttt{fake-miner} utilise du calcul CPU intensif, ce qui ne reflète pas exactement le comportement d'un vrai mineur GPU.
+
+\subsubsection{Réseau isolé et tentatives bloquées}
+Le réseau \texttt{--internal} bloque les connexions sortantes, ce qui empêcherait certains malwares de démarrer leur activité de minage. Les tentatives de connexion échouées ne laissent pas toujours de traces dans les logs du conteneur.
+
+\subsubsection{Durée d'observation fixe}
+ L'outil observe le comportement pendant une durée fixe configurée par l'utilisateur. Un malware sophistiqué pourrait détecter l'environnement d'analyse et rester dormant pendant cette période.
+
+\subsubsection{Image de test personnalisée}
+On souhaitait tester avec une image infectée depuis l'internet pour s'assurer que les effets soient véridiques lors des tests. Nous avons cependant considéré les risques potentiels que pourrait engendrer l'utilisation d'une telle image et avons conclu que le coût n'en valait pas la peine ce qui à mener à faire une image infectée simulée selon nos indicateurs de compromission définis.
+
+\subsubsection{Manque d'analyse en profondeur des fichiers}
+Des scripts malveillants ou des binaires de crypto mineurs suffisamment obfusqués dans d'autres types de fichiers ou de scripts peuvent échapper à l'analyse statique. L'analyse en profondeur requiert beaucoup plus de temps et d'expertise que nous n'avions pas en ce moment, dont notamment sur l'analyse de fichiers en binaires. Avec plus de temps et de connaissance, il serait possible d'ajouter cette fonctionnalité à l'outil.
+
+\subsection{Conclusion}
